@@ -5,6 +5,7 @@ import java.io.*;
 import model.Persona;
 public class gestionFch {
 
+	//25 caracteres x 2 = 50,
 	private RandomAccessFile fch; // 5 caracteres x 2 = 10, 4 int, 8 double  == 22
 	
 	public gestionFch(String fileName) {
