@@ -5,6 +5,7 @@ import java.io.*;
 public class Principal {
 
 	public static void main(String[] args) {
+		
 		int iClave = 5;
 		//File nombreFichero = new File("notas.txt");
 		//File nombreFichero = new File("ficheroEncriptado.txt");
@@ -23,25 +24,19 @@ public class Principal {
 	
 	private static void encriptarFichero (File nombreFchSource, File nombreFchEncripted, int iClave) {
 		String sTexto;
-		try {	
+		try {
+			
 					// Apertura de los dos ficheros
 					FileReader fchSource = new FileReader(nombreFchSource);
 					FileWriter fchTarget = new FileWriter(nombreFchEncripted);
-					
-					sTexto = fchSource.toString();
-					for (int iContador = 0; iContador <  10; iContador++) {
-						char letra = ((CharSequence) fchSource).charAt(iContador);
-						int ascii = letra;
-						System.out.println(letra + " " + ascii + " " + (letra + 1) + " " + (char) (letra + 1));
-						fchTarget.write(letra + iClave);
-					}
+
 					// Proceso de copia
 					int ascii;
 					int iContador = 0;
 					ascii = fchSource.read();
 					while (ascii != -1) {
 						iContador++;
-						fchTarget.write(ascii);
+						fchTarget.write(ascii - (iClave + 4));
 						ascii = fchSource.read();
 					}
 
