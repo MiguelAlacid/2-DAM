@@ -1,0 +1,72 @@
+package model;
+
+import java.util.*;
+
+public class Languages {
+	
+	public static ArrayList<String> PREGUNTA = new ArrayList<String>();
+	public static ArrayList<String> RESPUESTA = new ArrayList<String>();
+
+	public static ArrayList<String> ENG = new ArrayList<String>();
+	public static ArrayList<String> ESP = new ArrayList<String>();
+	
+	public static ArrayList<String> aENGpalabras = new ArrayList<String>();
+	public static ArrayList<String> AESPpalabras = new ArrayList<String>();
+	
+	public static int numPreg;
+	
+	public static void cargarLenguajes() {
+		int iCast = Integer.parseInt(view.frmConfig.txtNumeroPalabras.getText());
+		String sPalabras;
+		
+		aENGpalabras.add("HELLO");
+		aENGpalabras.add("PARROT");
+		aENGpalabras.add("DOG");
+		aENGpalabras.add("CAT");
+		aENGpalabras.add("FOREVER");
+		aENGpalabras.add("BUTTON");
+		aENGpalabras.add("TEXT");
+		aENGpalabras.add("PHONE");
+		aENGpalabras.add("ARM");
+		aENGpalabras.add("LEG");
+		
+		ESP.add("HOLA");
+		ESP.add("LORO");
+		ESP.add("PERRO");
+		ESP.add("GATO");
+		ESP.add("SIEMPRE");
+		ESP.add("BOTON");
+		ESP.add("TEXTO");
+		ESP.add("TELEFONO");
+		ESP.add("BRAZO");
+		ESP.add("PIERNA");
+		
+		for(int iContador = 0; iContador < iCast; iContador++) {
+			sPalabras 
+		}
+		
+		
+		
+	}
+	
+	public static void ING_ESP() {
+		PREGUNTA.addAll(ENG);
+		RESPUESTA.addAll(ESP);
+		
+	}
+	
+	public static void ESP_ENG() {
+		PREGUNTA.addAll(ESP);
+		RESPUESTA.addAll(ENG);
+	}
+	
+	public static void indiferente() {
+		PREGUNTA.addAll(ESP);
+		PREGUNTA.addAll(ENG);
+		
+		RESPUESTA.addAll(ENG);
+		RESPUESTA.addAll(ESP);
+		
+		
+	}
+}

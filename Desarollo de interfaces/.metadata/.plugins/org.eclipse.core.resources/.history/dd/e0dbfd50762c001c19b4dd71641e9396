@@ -1,0 +1,66 @@
+package model;
+
+import java.util.*;
+
+public class Languages {
+	
+	public static ArrayList<String> PREGUNTA = new ArrayList<String>();
+	public static ArrayList<String> RESPUESTA = new ArrayList<String>();
+
+	public static ArrayList<String> ENG = new ArrayList<String>();
+	public static ArrayList<String> ESP = new ArrayList<String>();
+	public static int numPreg;
+	
+	public static void cargarLenguajes() {
+		int iCast = Integer.parseInt(view.frmConfig.txtNumeroPalabras.getText());
+		String sPalabras;
+		
+		for(int iContador = 0; iContador < iCast; iContador++) {
+			
+		}
+		
+		ENG.add("HELLO");
+		ENG.add("PARROT");
+		ENG.add("DOG");
+		ENG.add("CAT");
+		/*ENG.add("FOREVER");
+		ENG.add("BUTTON");
+		ENG.add("TEXT");
+		ENG.add("PHONE");
+		ENG.add("ARM");
+		ENG.add("LEG");*/
+		
+		ESP.add("HOLA");
+		ESP.add("LORO");
+		ESP.add("PERRO");
+		ESP.add("GATO");
+		/*ESP.add("SIEMPRE");
+		ESP.add("BOTON");
+		ESP.add("TEXTO");
+		ESP.add("TELEFONO");
+		ESP.add("BRAZO");
+		ESP.add("PIERNA");*/
+		
+	}
+	
+	public static void ING_ESP() {
+		PREGUNTA.addAll(ENG);
+		RESPUESTA.addAll(ESP);
+		
+	}
+	
+	public static void ESP_ENG() {
+		PREGUNTA.addAll(ESP);
+		RESPUESTA.addAll(ENG);
+	}
+	
+	public static void indiferente() {
+		PREGUNTA.addAll(ESP);
+		PREGUNTA.addAll(ENG);
+		
+		RESPUESTA.addAll(ENG);
+		RESPUESTA.addAll(ESP);
+		
+		
+	}
+}
