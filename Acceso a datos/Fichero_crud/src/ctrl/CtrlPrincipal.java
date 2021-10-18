@@ -10,9 +10,25 @@ import model.infoEmpleado;
 public class CtrlPrincipal {
 
 	public static RandomAccessFile fch;
+	public static int iContador;
 
 	public CtrlPrincipal(String fileName) {
 		abrirFichero(fileName);
+		try {
+			iContador = (int) (fch.length() / Empleado.iLongReg);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void listarTodo() throws IOException {
+
+		for (int iContador = 0; iContador < ctrl.CtrlPrincipal.fch.length(); iContador += Empleado.iLongReg) {
+			view.viewEmpleado.oEmpleado = ctrl.CtrlPrincipal.leerRegistro2();
+			System.out.println(view.viewEmpleado.oEmpleado);
+
+		}
 	}
 
 	public static void abrirFichero(String fileName) {
@@ -88,40 +104,43 @@ public class CtrlPrincipal {
 		int iEdad = 0;
 		long lTelefono = 0;
 		double dSalario = 0.0;
-			try {
+		try {
 
-				// NOMBRE
-				for (int i = 0; i < Empleado.iLongsNombre; i++) {
-					sNombre += fch.readChar();;
-				}
+			// NOMBRE
+			for (int i = 0; i < Empleado.iLongsNombre; i++) {
+				sNombre += fch.readChar();
+				;
+			}
 
-				// APELLIDO
+			// APELLIDO
 
-				for (int i = 0; i < Empleado.iLongsApellido; i++) {					
-					sApellido += fch.readChar();;
-				}
+			for (int i = 0; i < Empleado.iLongsApellido; i++) {
+				sApellido += fch.readChar();
+				;
+			}
 
-				// EMAIL
+			// EMAIL
 
-				for (int i = 0; i < Empleado.iLongsEmail; i++) {
-					sEmail += fch.readChar();;
-				}
+			for (int i = 0; i < Empleado.iLongsEmail; i++) {
+				sEmail += fch.readChar();
+				;
+			}
 
-				// TELEFONO
+			// TELEFONO
 
-				lTelefono = fch.readLong();
+			lTelefono = fch.readLong();
 
-				// EDAD
+			// EDAD
 
-				iEdad = fch.readInt();
+			iEdad = fch.readInt();
 
-				// SALARIO
+			// SALARIO
 
-				dSalario = fch.readDouble();
-			} catch (IOException e) {
-				System.err.println("El fichero no es accesible");
-			}		
-			
+			dSalario = fch.readDouble();
+		} catch (IOException e) {
+			System.err.println("El fichero no es accesible");
+		}
+
 		return new Empleado(sNombre, sApellido, lTelefono, sEmail, iEdad, dSalario);
 	}
 
@@ -168,7 +187,7 @@ public class CtrlPrincipal {
 		} catch (IOException e) {
 			System.err.println("El fichero no es accesible");
 		}
-		
+
 		return new Empleado(sNombre, sApellido, lTelefono, sEmail, iEdad, dSalario);
 	}
 }

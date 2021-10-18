@@ -14,9 +14,12 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Usuario\git-repositories\2-DAM\Acceso a datos"/>
 			<item value="C:\Users\alaci\git-repositories\Acceso a datos\FicherosAccesoDirecto"/>
 			<item value="C:\Users\alaci\OneDrive\Documentos\Acceso a datos\03 - Ficheros de caracter"/>
 			<item value="C:\Users\alaci\OneDrive\Documentos\Acceso a datos\04 Ficheros secuenciales"/>
 		</list>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 </section>

@@ -16,7 +16,6 @@ public class viewEmpleado {
 
 		byte bOpcion = 1;
 		String sLineaLeida = "";
-		byte bPosicion;
 		do {
 		
 			
@@ -37,7 +36,7 @@ public class viewEmpleado {
 		
 			switch (bOpcion) {
 			case 1:
-				listarTodo();
+				ctrl.CtrlPrincipal.listarTodo();
 				break;
 			case 2:
 
@@ -45,12 +44,12 @@ public class viewEmpleado {
 				System.out.println(oEmpleado);
 				break;
 			case 3:
-				listarTodo();
+				ctrl.CtrlPrincipal.listarTodo();
 				ctrl.CtrlPrincipal.escribirRegistro(pedirPosition(), agregarPersonas());
 
 				break;
 			case 4:
-				ctrl.CtrlPrincipal.escribirRegistro(pedirPosition(), agregarPersonas());
+				ctrl.CtrlPrincipal.escribirRegistro(ctrl.CtrlPrincipal.iContador, agregarPersonas());
 				
 				break;
 			case 0:
@@ -101,12 +100,5 @@ public class viewEmpleado {
 		return bPosicion = Byte.parseByte(sLineaLeida);
 	}
 
-	public static void listarTodo() throws IOException {
-
-		for (int iContador = 0; iContador < ctrl.CtrlPrincipal.fch.length(); iContador += Empleado.iLongReg) {
-			oEmpleado = ctrl.CtrlPrincipal.leerRegistro2();
-			System.out.println(oEmpleado);
-
-		}
-	}
+	
 }
