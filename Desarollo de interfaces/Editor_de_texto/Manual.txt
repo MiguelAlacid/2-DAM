@@ -1,0 +1,3 @@
+<html> <p> <b>este es el manual del fichero aquí se representa todo lo referente</b> </p>
+
+</html>

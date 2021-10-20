@@ -6,6 +6,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Usuario\git-repositories\2-DAM\Desarollo de interfaces"/>
+			<item value="C:\Users\Usuario\git-repositories\2-DAM\Desarollo de interfaces\pruebaGuardarArchivos"/>
 			<item value="C:\Users\alaci\OneDrive\Documentos\Desarollo de interfaces\pruebaGuardarArchivos"/>
 			<item value="C:\Users\alaci\OneDrive\Documentos\Desarollo de interfaces\14 - Trabajando MIGUELANGEL EJ"/>
 		</list>

@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="model.Languages"/>
-    <fullyQualifiedTypeName name="view.FrmPrincipal"/>
     <fullyQualifiedTypeName name="view.frmConfig"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionEvent"/>
@@ -13,4 +12,12 @@
     <fullyQualifiedTypeName name="model.Persona"/>
     <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
     <fullyQualifiedTypeName name="view.frmPrincipal"/>
+    <fullyQualifiedTypeName name="javax.swing.JMenu"/>
+    <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="view.FrmPrincipal"/>
+    <fullyQualifiedTypeName name="view.manualDialog"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+    <fullyQualifiedTypeName name="ctrl.ctrlPrincipal"/>
 </qualifiedTypeNameHistroy>
