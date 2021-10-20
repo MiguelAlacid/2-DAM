@@ -2,6 +2,7 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.StringTokenizer;
 
 public class Principal {
@@ -11,11 +12,12 @@ public class Principal {
 		File fch = new File("conexion.cfg");
 		File fch1 = new File("f1.txt");
 		File fch2 = new File("f2.txt");
-		File fch3 = new File("f3.txt");
+		//File fch3 = new File("f3.txt");
 		// Conexion oConexion = leerConfiguracion(fch);
 		// System.out.println(oConexion);
 		// diffFch(fch1, fch2, fch3);
-		escribirFchInverso(fch1, fch2);
+		
+		invertirFichero(fch1, fch2);
 		/*
 		 * String sTexto = "1231231212313131314151241231234123123"; escribirArchivo(fch,
 		 * nombreArrayList); ArrayList<String> frases = leerFichero(fch);
@@ -24,44 +26,64 @@ public class Principal {
 		 */
 	}
 
-	private static void escribirFchInverso(File fch1, File fch2) {
-		byte bContador = 0;
-		try {
-			FileReader fichero = new FileReader(fch1);
-			FileWriter fichero2 = new FileWriter(fch2);
+	private static void invertirFichero(File fch01, File fchResultado) {
+
+        int iNumLineas = contadorLineas(fch01);
+        String sLineaLeida = "";
+        boolean booPrimera = true;
+
+        try {
+            BufferedWriter buffWrite = new BufferedWriter(new FileWriter(fchResultado));
+            for (int i = iNumLineas; i > 0; i--) {
+                BufferedReader buffReader = new BufferedReader(new FileReader(fch01));
+                for (int j = i; j > 0; j--) {
+                    sLineaLeida = buffReader.readLine();
+                }
+                if (!booPrimera) {
+                    buffWrite.newLine();
+
+                } else {
+                    booPrimera = false;
+                }
+
+                buffWrite.write(sLineaLeida);
+                buffReader.close();
+            }
+            buffWrite.flush();
+            buffWrite.close();
+
+        } catch (FileNotFoundException e) {
+            System.out.println("El fichero no existe");
+        } catch (IOException i){
+            System.out.println("Se ha producido un error al acceder al fichero");
+        } catch (Exception o) {
+            System.out.println("Se ha producido un error no tipificado");
+        }
+
+    }
+	
+	public static int contadorLineas(File fch01) {
+		String sLineaLeida = "";
+		int iContador = 0;
+		 try {
+			BufferedReader buffReader = new BufferedReader(new FileReader(fch01));
 			
-			BufferedReader bufLectura = new BufferedReader(fichero);
-			BufferedWriter bufEscribir = new BufferedWriter(fichero2);
 			
-			String sLineaLeida = "";
-			
-			sLineaLeida = bufLectura.readLine();
+			sLineaLeida = buffReader.readLine();
 			
 			while(sLineaLeida != null) {
-				bContador++;
-				sLineaLeida = bufLectura.readLine();
+				iContador++;
+				sLineaLeida = buffReader.readLine();
 			}
-			fichero.close();
-			bufLectura.close();
-			System.out.println(bContador);
-			 fichero = new FileReader(fch1);
-			 bufLectura = new BufferedReader(fichero);
-			 
-			/*while(sLineaLeida != null) {
-				sLinea
-				if()
-			}*/
-			
-			
 			
 		} catch (FileNotFoundException e) {
-			System.out.println("Fichero no encontrado.");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (IOException e) {
-			System.out.println("Error accediendo al fichero.");
-		} catch (Exception e) {
-			System.out.println("Se ha producido un error");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
+		 return iContador;
 	}
 
 	private static void diffFch(File fch1, File fch2, File fch3) {

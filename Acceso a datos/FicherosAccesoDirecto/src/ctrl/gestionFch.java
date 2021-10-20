@@ -22,6 +22,7 @@ public class gestionFch {
 	}
 
 	public void cerrarFichero() {
+		
 		try {
 			fch.close();
 		}catch(IOException e) {
