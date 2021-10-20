@@ -9,16 +9,16 @@ public class Principal {
 		int iClave = 5;
 		//File nombreFichero = new File("notas.txt");
 		//File nombreFichero = new File("ficheroEncriptado.txt");
-		File nombreFchEncripted = new File ("ficheroEncriptado");
-		File nombreFchSource = new File("notas.txt");
-		File nombreFchTarget = new File("notas_v2.txt");
+		File nombreFchEncripted = new File ("encriptado.txt");
+		File nombreFchSource = new File("nota.txt");
+		File nombreFchTarget = new File("desencriptado.txt");
 
 		//escribirFch(nombreFichero);
 		// leerFch(nombreFichero);
 		//escribirFchEncriptado(nombreFchEncripted);
 		//copiarFch(nombreFchSource, nombreFchTarget);
-		encriptarFichero(nombreFchSource, nombreFchEncripted, iClave);
-		//desEncriptarFichero(nombreFchEncripted, nombreFchTarget, iClave);
+		//encriptarFichero(nombreFchSource, nombreFchEncripted, iClave);
+		desencriptarFch(nombreFchTarget, nombreFchEncripted, iClave);
 
 	}
 	
@@ -55,6 +55,39 @@ public class Principal {
 			
 	}
 
+	private static void desencriptarFch (File nombreFchSource, File nombreFchEncripted, int iClave) {
+		String sTexto;
+		try {
+			
+					// Apertura de los dos ficheros
+					FileReader fchSource = new FileReader(nombreFchEncripted);
+					FileWriter fchTarget = new FileWriter(nombreFchSource);
+
+					// Proceso de copia
+					int ascii;
+					int iContador = 0;
+					ascii = fchSource.read();
+					while (ascii != -1) {
+						iContador++;
+						fchTarget.write(ascii + (iClave + 4));
+						ascii = fchSource.read();
+					}
+
+					// Cierre de los 2 ficheros
+
+					fchSource.close();
+					fchTarget.close();
+
+					// Informacion resultado del proceso
+					System.out.println("Se han copiado " + iContador + " caracteres");
+				} catch (FileNotFoundException e) {
+					System.err.println("Fichero no encontrado");
+				} catch (IOException e) {
+					System.err.println("Error accediendo al fichero");
+				}
+			
+	}
+	
 	private static void escribirFchEncriptado(File nombreFichero) {
 		String sTexto = "Hola";
 		int iClave = 2;

@@ -18,7 +18,11 @@ public class Principal {
 		nombreArrayList.add("CERDO");*/
 		aPersona = leerFchArray(fch);
 		escribirPersonas(fch2, aPersona);
-		aPersona.forEach (s -> System.out.println(s));
+		aPersona.forEach (oPersona -> System.out.println(oPersona));
+		
+		/*for(Persona oPersona : aPersona) {
+			System.out.println(oPersona.getsNombre());
+		}*/
 		
 		/*
 		 * String sTexto = "1231231212313131314151241231234123123"; escribirArchivo(fch,

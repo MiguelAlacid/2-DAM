@@ -9,7 +9,7 @@ public class Principal {
 	public static void main(String[] args) {
 		// Mi app apunta a un fichero...
 		// String sFichero ="ficheros\\ciudades.txt";
-		String sFichero = "C:\\Users\\Usuario\\Documents\\prueba";
+		String sFichero = "C:\\Users\\alaci\\Documents\\Nueva carpeta";
 		File fichero = new File(sFichero);
 		int iContadorGlobalDir = 0;
 		int iContadorGlobalFch = 0;
@@ -19,7 +19,7 @@ public class Principal {
 			if (fichero.isDirectory()) {
 				//NombresTodasLasCarpetas(fichero, iContadorGlobalDir, iContadorGlobalFch);
 				System.out.println(contarCarpetasFicherosTotal(fichero));
-				// contenidoEspecifico(fichero); // verSubCarpetas(fichero);
+				contenidoEspecifico(fichero); // verSubCarpetas(fichero);
 				// contadorItems(fichero);
 				// infoDir(fichero);
 			} else {
