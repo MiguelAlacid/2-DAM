@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="model.Languages"/>
     <fullyQualifiedTypeName name="view.frmConfig"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionEvent"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
     <fullyQualifiedTypeName name="javax.swing.JList"/>
@@ -20,4 +19,8 @@
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
     <fullyQualifiedTypeName name="ctrl.ctrlPrincipal"/>
+    <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="javax.swing.JRootPane"/>
 </qualifiedTypeNameHistroy>

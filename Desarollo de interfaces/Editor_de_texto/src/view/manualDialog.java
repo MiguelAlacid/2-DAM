@@ -13,6 +13,11 @@ import javax.swing.SwingConstants;
 
 public class manualDialog extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private final JPanel contentPanel = new JPanel();
 
 	File fch = new File("Manual.txt");

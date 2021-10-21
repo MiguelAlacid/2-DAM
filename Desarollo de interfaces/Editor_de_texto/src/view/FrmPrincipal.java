@@ -38,6 +38,10 @@ public class FrmPrincipal extends JFrame {
 
 		JMenuBar menuBar = new JMenuBar();
 
+		JMenu mnuFormato = new JMenu("Formato");
+		JMenuItem itemFuente = new JMenuItem("Fuente");
+		JMenuItem itemColores = new JMenuItem("Colores");
+		
 		JMenu mnuArchivo = new JMenu("Archivo");
 		JMenuItem itemNuevo = new JMenuItem("Nuevo");
 		itemNuevo.addActionListener(new ActionListener() {
@@ -102,10 +106,16 @@ public class FrmPrincipal extends JFrame {
 		mnuArchivo.add(itemGuardarComo);
 		mnuArchivo.addSeparator();
 		mnuArchivo.add(itemSalir);
+		
+		
 
 		menuBar.add(mnuAyuda);
 		mnuAyuda.add(itemManual);
 		mnuAyuda.add(itemAcercaDe);
+		
+		menuBar.add(mnuFormato);
+		mnuFormato.add(itemFuente);
+		mnuFormato.add(itemColores);
 
 		setVisible(true);
 	}

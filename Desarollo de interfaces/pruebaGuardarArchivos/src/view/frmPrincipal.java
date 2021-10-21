@@ -112,7 +112,7 @@ public class frmPrincipal extends JFrame {
 		txtNombre.setVisible(false);
 		
 		lstNombres = new JList();
-		lstNombres.setBounds(10, 50, 126, 149);
+		lstNombres.setBounds(10, 50, 126, 142);
 		contentPane.add(lstNombres);
 		
 		lstNombres.addListSelectionListener(new ListSelectionListener(){
