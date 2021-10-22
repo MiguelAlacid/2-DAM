@@ -39,7 +39,17 @@ public class FrmPrincipal extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 
 		JMenu mnuFormato = new JMenu("Formato");
+		
 		JMenuItem itemFuente = new JMenuItem("Fuente");
+		itemFuente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				model.FuenteTamannio.cargarFuenteTamannio();
+				new fuenteDialog();
+				view.fuenteDialog.listFuente.setModel(model.FuenteTamannio.oModelo(model.FuenteTamannio.FUENTE));
+				view.fuenteDialog.listTamannio.setModel(model.FuenteTamannio.oModelo(model.FuenteTamannio.TAMANNIO));
+				
+			}
+		});
 		JMenuItem itemColores = new JMenuItem("Colores");
 		
 		JMenu mnuArchivo = new JMenu("Archivo");

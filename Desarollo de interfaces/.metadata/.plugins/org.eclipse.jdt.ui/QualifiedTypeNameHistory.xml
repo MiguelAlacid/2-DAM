@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionEvent"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
     <fullyQualifiedTypeName name="javax.swing.JList"/>
-    <fullyQualifiedTypeName name="javax.swing.DefaultListModel"/>
     <fullyQualifiedTypeName name="javax.swing.filechooser.FileNameExtensionFilter"/>
     <fullyQualifiedTypeName name="model.Persona"/>
     <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
@@ -18,9 +17,13 @@
     <fullyQualifiedTypeName name="view.manualDialog"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
-    <fullyQualifiedTypeName name="ctrl.ctrlPrincipal"/>
     <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.swing.JRootPane"/>
+    <fullyQualifiedTypeName name="javax.swing.DefaultListModel"/>
+    <fullyQualifiedTypeName name="view.fuenteDialog"/>
+    <fullyQualifiedTypeName name="ctrl.ctrlPrincipal"/>
+    <fullyQualifiedTypeName name="model.FuenteTamaño"/>
+    <fullyQualifiedTypeName name="model.FuenteTamannio"/>
 </qualifiedTypeNameHistroy>

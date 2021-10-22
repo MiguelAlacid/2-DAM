@@ -2,7 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
-public class FuenteTamaño {
+import javax.swing.DefaultListModel;
+
+public class FuenteTamannio {
 
 	public static ArrayList<String> FUENTE = new ArrayList<String>();
 	public static ArrayList<String> TAMANNIO = new ArrayList<String>();
@@ -29,6 +31,19 @@ public class FuenteTamaño {
 		TAMANNIO.add("24");
 		TAMANNIO.add("26");
 		TAMANNIO.add("30");
+		TAMANNIO.add("34");
 		
+	}
+	
+	public static DefaultListModel<String> oModelo(ArrayList <String> estilo) {
+		String sNombres="";
+		DefaultListModel<String> modeloFuente = new DefaultListModel<String>();
+		for(int iContador = 0; iContador < estilo.size(); iContador++) {
+			sNombres = estilo.get(iContador);
+			modeloFuente.addElement(sNombres);
+		}
+		
+			
+		return modeloFuente;
 	}
 }

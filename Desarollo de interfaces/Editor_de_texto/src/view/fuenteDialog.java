@@ -3,10 +3,12 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JRootPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -20,28 +22,11 @@ import javax.swing.JList;
 
 public class fuenteDialog extends JDialog {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
+	public static JList<String> listTamannio;
+	public static JList<String> listFuente;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			fuenteDialog dialog = new fuenteDialog();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * Create the dialog.
-	 */
 	public fuenteDialog() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
@@ -65,17 +50,45 @@ public class fuenteDialog extends JDialog {
 		lblNewLabel_2.setBounds(328, 38, 46, 14);
 		contentPanel.add(lblNewLabel_2);
 		
-		String sNombre = "hola";
-		DefaultListModel<String> modelo = new DefaultListModel<String>();
-			modelo.addElement(sNombre);
 		
-		JList<String> listFuente = new JList<String>(modelo);
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(29, 78, 72, 139);
-		scrollPane.setViewportView(listFuente);
+		listFuente = new JList<String>();
+		JScrollPane scrollPaneFuente = new JScrollPane();
+		scrollPaneFuente.setBounds(29, 78, 91, 103);
+		scrollPaneFuente.setViewportView(listFuente);
+				
+		
+		listTamannio = new JList<String>();
+		JScrollPane scrollPaneTamannio = new JScrollPane();
+		scrollPaneTamannio.setBounds(171, 78, 91, 103);
+		scrollPaneTamannio.setViewportView(listTamannio);
+		
+		ButtonGroup bgTipoTraduccion = new ButtonGroup();
+
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Normal");
+		rdbtnNewRadioButton.setBounds(300, 86, 109, 23);
+		contentPanel.add(rdbtnNewRadioButton);
+
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Negrita");
+		rdbtnNewRadioButton_1.setBounds(300, 133, 109, 23);
+		contentPanel.add(rdbtnNewRadioButton_1);
+
+		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Cursiva");
+		rdbtnNewRadioButton_2.setBounds(300, 179, 109, 23);
+		contentPanel.add(rdbtnNewRadioButton_2);
+
+		bgTipoTraduccion.add(rdbtnNewRadioButton);
+		bgTipoTraduccion.add(rdbtnNewRadioButton_1);
+		bgTipoTraduccion.add(rdbtnNewRadioButton_2);
 		
 		
-        contentPanel.add(scrollPane);
+        contentPanel.add(scrollPaneFuente);
+        contentPanel.add(scrollPaneTamannio);
+        
+        JLabel lblNewLabel_3 = new JLabel("TEXTO DE PRUEBA");
+        lblNewLabel_3.setFont(new Font(listFuente.getSelectedValue().toString(), Font.PLAIN, 14));
+        lblNewLabel_3.setBounds(106, 214, 137, 14);
+        contentPanel.add(lblNewLabel_3);
+        setVisible(true);
 		/* List<String> labels = new ArrayList<>(25);
          for (int index = 0; index < 100; index++) {
              labels.add("Item " + index);

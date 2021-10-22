@@ -39,6 +39,10 @@ public class ctrlPrincipal {
 
 	}
 
+	public static void leerFuente() {
+		
+	}
+	
 	public static void guardarFicheroTexto() {
 		JFileChooser selectorFch = new JFileChooser();
 
