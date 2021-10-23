@@ -1,5 +1,6 @@
 package ctrl;
 
+import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -40,9 +41,9 @@ public class ctrlPrincipal {
 	}
 
 	public static void leerFuente() {
-		
+
 	}
-	
+
 	public static void guardarFicheroTexto() {
 		JFileChooser selectorFch = new JFileChooser();
 
@@ -100,6 +101,23 @@ public class ctrlPrincipal {
 			System.exit(0);
 		} else {
 			view.FrmPrincipal.ventana.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		}
+
+	}
+
+	public static void cambiarEstilo() {
+
+		if (view.fuenteDialog.rdnCursiva.isSelected()) {
+
+			view.fuenteDialog.lblTextoPrueba.setFont(new Font(view.fuenteDialog.sSelectedFuente, Font.ITALIC, Integer.parseInt(view.fuenteDialog.sSelectedTamannio)));
+
+		} else if (view.fuenteDialog.rdnNegrito.isSelected()) {
+
+			view.fuenteDialog.lblTextoPrueba.setFont(new Font(view.fuenteDialog.sSelectedFuente, Font.BOLD, Integer.parseInt(view.fuenteDialog.sSelectedTamannio)));
+
+		} else {
+
+			view.fuenteDialog.lblTextoPrueba.setFont(new Font(view.fuenteDialog.sSelectedFuente, Font.PLAIN, Integer.parseInt(view.fuenteDialog.sSelectedTamannio)));
 		}
 
 	}

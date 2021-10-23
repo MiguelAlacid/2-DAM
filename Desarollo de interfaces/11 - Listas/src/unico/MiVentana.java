@@ -2,7 +2,6 @@ package unico;
 
 import java.awt.*;
 import java.awt.event.*;
-import Atxy2k.CustomTextField.RestrictedTextField;
 import javax.swing.*;
 
 public class MiVentana extends java.awt.Frame {
