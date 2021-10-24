@@ -6,18 +6,18 @@ public class Persona implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private String sNombre;
-	private byte bEdad;
+	private int iEdad;
 	private float fPeso;
 	
 	
 	public Persona() {
 		this.sNombre = "";
-		this.bEdad = 0;
+		this.iEdad = 0;
 		this.fPeso = 0.0f;
 	}
-	public Persona(String sNombre, byte bEdad, float fPeso) {
+	public Persona(String sNombre, int iEdad, float fPeso) {
 		this.sNombre = sNombre;
-		this.bEdad = bEdad;
+		this.iEdad = iEdad;
 		this.fPeso = fPeso;
 	}
 	public String getsNombre() {
@@ -26,11 +26,11 @@ public class Persona implements Serializable{
 	public void setsNombre(String sNombre) {
 		this.sNombre = sNombre;
 	}
-	public byte getbEdad() {
-		return bEdad;
+	public int getiEdad() {
+		return iEdad;
 	}
-	public void setbEdad(byte bEdad) {
-		this.bEdad = bEdad;
+	public void setiEdad(int iEdad) {
+		this.iEdad = iEdad;
 	}
 	public float getfPeso() {
 		return fPeso;
@@ -40,7 +40,7 @@ public class Persona implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Persona [sNombre=" + sNombre + ", bEdad=" + bEdad + ", fPeso=" + fPeso + "]";
+		return "Persona [sNombre=" + sNombre + ", bEdad=" + iEdad + ", fPeso=" + fPeso + "]";
 	}
 	
 	

@@ -15,13 +15,15 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.awt.Color;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.JList;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
@@ -37,6 +39,8 @@ public class fuenteDialog extends JDialog {
 	public static JLabel lblTextoPrueba;
 	public static String sSelectedFuente = "Arial";
 	public static String sSelectedTamannio = "8";
+	public static Font fDefault;
+
 
 	public fuenteDialog() {
 		
@@ -67,7 +71,6 @@ public class fuenteDialog extends JDialog {
 		listFuente.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
 				JList source = (JList)e.getSource();
-				
 				sSelectedFuente = source.getSelectedValue().toString();
 	             ctrl.ctrlPrincipal.cambiarEstilo();
 			}
@@ -129,22 +132,30 @@ public class fuenteDialog extends JDialog {
         
         lblTextoPrueba = new JLabel("TEXTO DE PRUEBA");
         lblTextoPrueba.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTextoPrueba.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblTextoPrueba.setFont(new Font ("Tahoma", Font.PLAIN, 14));
         lblTextoPrueba.setBounds(29, 224, 355, 74);
         contentPanel.add(lblTextoPrueba);
         
-        JButton btnNewButton = new JButton("Aceptar");
-        btnNewButton.addActionListener(new ActionListener() {
+        JButton btnAceptar = new JButton("Aceptar");
+        btnAceptar.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		
+        		view.FrmPrincipal.txtAreaEscritura.setFont(lblTextoPrueba.getFont());
+        		dispose();
         	}
         });
-        btnNewButton.setBounds(225, 297, 89, 23);
-        contentPanel.add(btnNewButton);
+        btnAceptar.setBounds(225, 297, 89, 23);
+        contentPanel.add(btnAceptar);
         
-        JButton btnNewButton_1 = new JButton("Cancelar");
-        btnNewButton_1.setBounds(328, 297, 89, 23);
-        contentPanel.add(btnNewButton_1);
+        JButton btnGuardar = new JButton("Guardar");
+        btnGuardar.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		fDefault = view.fuenteDialog.lblTextoPrueba.getFont();
+        		ctrl.ctrlPrincipal.writeFont();
+        	
+        	}
+        });
+        btnGuardar.setBounds(328, 297, 89, 23);
+        contentPanel.add(btnGuardar);
         setVisible(true);
         
 		/* List<String> labels = new ArrayList<>(25);

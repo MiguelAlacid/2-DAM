@@ -14,6 +14,8 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.CardLayout;
+import java.awt.Color;
 
 public class FrmPrincipal extends JFrame {
 
@@ -30,11 +32,11 @@ public class FrmPrincipal extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new CardLayout(0, 0));
 
 		txtAreaEscritura = new JTextArea();
-		txtAreaEscritura.setBounds(0, 0, 434, 239);
-		contentPane.add(txtAreaEscritura);
+		
+		contentPane.add(txtAreaEscritura, "name_106509955872000");
 
 		JMenuBar menuBar = new JMenuBar();
 
@@ -51,11 +53,18 @@ public class FrmPrincipal extends JFrame {
 			}
 		});
 		JMenuItem itemColores = new JMenuItem("Colores");
+		itemColores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new coloresDialog();
+			}
+		});
 		
 		JMenu mnuArchivo = new JMenu("Archivo");
 		JMenuItem itemNuevo = new JMenuItem("Nuevo");
 		itemNuevo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				txtAreaEscritura.setForeground(Color.black);
+				txtAreaEscritura.setBackground(Color.white);
 				ctrl.ctrlPrincipal.fileName = null;
 				txtAreaEscritura.setText("");
 			}
@@ -63,6 +72,7 @@ public class FrmPrincipal extends JFrame {
 		JMenuItem itemAbrir = new JMenuItem("Abrir");
 		itemAbrir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				ctrl.ctrlPrincipal.abrirFicheroTexto();
 			}
 		});

@@ -6,7 +6,8 @@ public class Start {
 
 	public static void main(String[] args) {
 		
-		new FrmPrincipal();	
+		new FrmPrincipal();
+		ctrl.ctrlPrincipal.defaultConfig();
 		
 	}
 

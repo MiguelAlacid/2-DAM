@@ -29,7 +29,7 @@ public class Principal {
 	private static void escritura(String sFileName) {
 		//Coche c1 = new Coche("Citroen", "C5", 1500);
 		//ctrl.GestionFch.writeData(sFileName, c1);
-		
+	
 		ArrayList<Coche> lst = new ArrayList<>();
 		lst.add(new Coche("Citroen", "C5", 1500));
 		lst.add(new Coche("Renault", "clio", 1500));
