@@ -16,7 +16,6 @@
     <fullyQualifiedTypeName name="view.FrmPrincipal"/>
     <fullyQualifiedTypeName name="view.manualDialog"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
     <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -26,4 +25,7 @@
     <fullyQualifiedTypeName name="ctrl.ctrlPrincipal"/>
     <fullyQualifiedTypeName name="model.FuenteTamaño"/>
     <fullyQualifiedTypeName name="model.FuenteTamannio"/>
+    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+    <fullyQualifiedTypeName name="javax.sound.sampled.AudioSystem"/>
+    <fullyQualifiedTypeName name="javax.sound.sampled.Clip"/>
 </qualifiedTypeNameHistroy>

@@ -15,4 +15,6 @@
     <fullyQualifiedTypeName name="ctrl.GestionFch"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="ctrl.ctrlGestionFchXml"/>
+    <fullyQualifiedTypeName name="model.CcAa"/>
 </qualifiedTypeNameHistroy>
