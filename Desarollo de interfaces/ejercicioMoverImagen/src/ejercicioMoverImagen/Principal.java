@@ -19,6 +19,7 @@ public class Principal extends JFrame {
 	private ImageIcon imagen;
 	public static int x = 15;
 	public static int y = 15;
+	public static int iSalto = 50;
 
 	/**
 	 * Launch the application.
@@ -49,8 +50,34 @@ public class Principal extends JFrame {
 		JLabel lblimagen = new JLabel();
 		lblimagen.setIcon((new ImageIcon("imagen/mosca.gif")));
 		lblimagen.setBounds(x, y, 253, 178);
-
+		
+		
 		this.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+          
+                switch (e.getKeyCode()) {
+                case KeyEvent.VK_SPACE:
+                    y += iSalto;
+                    System.out.println("abajo");
+                    break;
+                case KeyEvent.VK_UP:
+                	System.out.println("abajo");
+                    y -= iSalto;
+                    break;
+                case KeyEvent.VK_RIGHT:
+                	System.out.println("abajo");
+                    x += iSalto;
+                    break;
+                case KeyEvent.VK_LEFT:
+                	System.out.println("abajo");
+                    x -= iSalto;
+                    break;
+                }
+                lblimagen.setLocation(x, y);
+            }
+        });
+
+		/*this.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 
 				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -84,9 +111,9 @@ public class Principal extends JFrame {
 					contentPane.setBackground(Color.green);
 				}
 			}
-		});
+		});*/
 		
-		this.addKeyListener(new KeyAdapter() {
+		/*this.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 			try {
 				Clip sonido = AudioSystem.getClip();
@@ -95,7 +122,7 @@ public class Principal extends JFrame {
 				sonido.start();
 			}
 			}
-		});
+		});*/
 		
 		
 		contentPane.add(lblimagen);
