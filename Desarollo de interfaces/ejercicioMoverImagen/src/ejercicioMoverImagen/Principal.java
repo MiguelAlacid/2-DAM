@@ -77,7 +77,7 @@ public class Principal extends JFrame {
             }
         });
 
-		/*this.addKeyListener(new KeyAdapter() {
+		this.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 
 				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
@@ -111,7 +111,7 @@ public class Principal extends JFrame {
 					contentPane.setBackground(Color.green);
 				}
 			}
-		});*/
+		});
 		
 		/*this.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {

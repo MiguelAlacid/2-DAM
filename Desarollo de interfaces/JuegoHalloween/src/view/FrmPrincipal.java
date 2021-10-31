@@ -17,6 +17,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import javax.swing.JSeparator;
@@ -38,6 +40,7 @@ public class FrmPrincipal extends JFrame {
 	public static int iYDracula;
 	public static int iMurcielagosTotales;
 	public static int iCalabazasTotales;
+	public static boolean boRevolver;
 	public static int iMurcielagos;
 	public static int iCalabazas;
 	public static int iPosicionDracula;
@@ -45,7 +48,8 @@ public class FrmPrincipal extends JFrame {
 	public static JLabel lblPuntos;
 	public static JLabel lblCalabazas;
 	public static JLabel lblMurcielagosTotales;
-	public static ArrayList<String> aImagenes = new ArrayList<>();
+
+	public static ArrayList<String> aImagenesPos = new ArrayList<>();
 
 	public FrmPrincipal() {
 
@@ -289,9 +293,30 @@ public class FrmPrincipal extends JFrame {
 				JDracula = celda[iContador];
 				iPosicionDracula = iContador;
 				iPosicionDraculaInicial = iContador;
-				aImagenes.add(sNumeroAleatorio);
+				aImagenesPos.add(sNumeroAleatorio);
 
-			} else {
+				
+			} else if(sNumeroAleatorio.equals("images/revolver.png")&& boDracula == false){
+				boDracula = true;
+				celda[iContador] = new JLabel(new ImageIcon(
+						new ImageIcon(sNumeroAleatorio).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+				celda[iContador].setBounds(iX, iY, 50, 50);
+				aImagenesPos.add(sNumeroAleatorio);
+			}else if(sNumeroAleatorio.equals("images/cemetery.png") && boDracula == false){
+				boDracula = true;
+				celda[iContador] = new JLabel(new ImageIcon(
+						new ImageIcon(sNumeroAleatorio).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+				celda[iContador].setBounds(iX, iY, 50, 50);
+				aImagenesPos.add(sNumeroAleatorio);
+				celda[iContador].setVisible(false);
+				
+			}else if(sNumeroAleatorio.equals("images/sun.png") && boDracula == false){
+				boDracula = true;
+				celda[iContador] = new JLabel(new ImageIcon(
+						new ImageIcon(sNumeroAleatorio).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+				celda[iContador].setBounds(iX, iY, 50, 50);
+				aImagenesPos.add(sNumeroAleatorio);
+			}else{
 				if (sNumeroAleatorio.equals("images/bat.png")) {
 					iMurcielagosTotales++;
 				}
@@ -301,7 +326,7 @@ public class FrmPrincipal extends JFrame {
 				celda[iContador] = new JLabel(new ImageIcon(
 						new ImageIcon(sNumeroAleatorio).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
 				celda[iContador].setBounds(iX, iY, 50, 50);
-				aImagenes.add(sNumeroAleatorio);
+				aImagenesPos.add(sNumeroAleatorio);
 
 			}
 
@@ -323,8 +348,9 @@ public class FrmPrincipal extends JFrame {
 	}
 
 	public static void validador() {
-		ImageIcon img = new ImageIcon("");
-		System.out.println(img.getDescription());
+		String sMensaje ="";
+		ImageIcon imgCalabaza = new ImageIcon("images/pumpkin.png");
+		ImageIcon imgMurcielago = new ImageIcon("images/bat.png");
 
 		System.out.println("DRAC" + iPosicionDracula);
 		System.out.println("Y celda " + celda[iPosicionDracula].getY());
@@ -334,40 +360,64 @@ public class FrmPrincipal extends JFrame {
 		// System.out.println(celda[iPosicionDracula].getIcon());
 
 		if (iYDracula == celda[iPosicionDracula].getY() && iXDracula == celda[iPosicionDracula].getX()
-				&& aImagenes.get(iPosicionDracula).equals("images/bat.png")) {
+				&& aImagenesPos.get(iPosicionDracula).equals("images/bat.png")) {
 
 			if (iMurcielagos != iMurcielagosTotales) {
 				iPuntos += 30;
 				iMurcielagos++;
+				
 			}
-
+			celda[iPosicionDracula].setVisible(true);
 		} else if (iYDracula == celda[iPosicionDracula].getY() && iXDracula == celda[iPosicionDracula].getX()
-				&& aImagenes.get(iPosicionDracula).equals("images/pumpkin.png")) {
+				&& aImagenesPos.get(iPosicionDracula).equals("images/pumpkin.png")) {
 
 			if (iCalabazas != iCalabazasTotales) {
 				iPuntos += 20;
 				iCalabazas++;
+				//JLabel cambio = celda[iPosicionDracula];
+				//cambio.setIcon(imgCalabaza);
+				
+				
 			}
+			celda[iPosicionDracula].setVisible(true);
 			mostrarObjetos();
 
 		} else if (iYDracula == celda[iPosicionDracula].getY() && iXDracula == celda[iPosicionDracula].getX()
-				&& aImagenes.get(iPosicionDracula).equals("images/garlic.png")) {
+				&& aImagenesPos.get(iPosicionDracula).equals("images/garlic.png")) {
 			iPuntos -= 50;
+			celda[iPosicionDracula].setVisible(true);
+			mostrarObjetos();
 
 		} else if (iYDracula == celda[iPosicionDracula].getY() && iXDracula == celda[iPosicionDracula].getX()
-				&& aImagenes.get(iPosicionDracula).equals("images/religion.png")) {
+				&& aImagenesPos.get(iPosicionDracula).equals("images/religion.png")) {
 			iPuntos -= 100;
+			celda[iPosicionDracula].setVisible(true);
+			mostrarObjetos();
+		}else if(iYDracula == celda[iPosicionDracula].getY() && iXDracula == celda[iPosicionDracula].getX()
+				&& aImagenesPos.get(iPosicionDracula).equals("images/sun.png")){
+			sMensaje = "MUERTO, EL SOL TE HA DESINTEGRADO.. INTENTALO DE NUEVO";
+			finJuego(sMensaje);
+			
+		}else if(iYDracula == celda[iPosicionDracula].getY() && iXDracula == celda[iPosicionDracula].getX()
+				&& aImagenesPos.get(iPosicionDracula).equals("images/revolver.png")) {
+			sMensaje = "MUERTO, TE HAN PEGADO UN TIRO CON BALAS DE PLATA... INTENTALO DE NUEVO";
+			finJuego(sMensaje);
 		}
 
 		lblMurcielagosTotales.setText("Murcielagos totales: " + iMurcielagos + " de " + iMurcielagosTotales);
 		lblCalabazas.setText("Calabazas Totales: " + iCalabazas + " de " + iCalabazasTotales);
-		if (aImagenes.get(iPosicionDracula).equals("images/dracula.png")) {
+		if (aImagenesPos.get(iPosicionDracula).equals("images/dracula.png")) {
 
 		} else {
 			JLabel cambio = celda[iPosicionDracula];
-			cambio.setIcon(img);
-			aImagenes.set(iPosicionDracula, "");
+			aImagenesPos.set(iPosicionDracula, "");
+			
 
+		}
+		
+		if(iCalabazasTotales == iCalabazas && iMurcielagosTotales == iMurcielagos) {
+			sMensaje = "ENHORABUENA, GANASTE EL JUEGO CON " + iPuntos + " PUNTOS";
+			finJuego(sMensaje);
 		}
 		lblPuntos.setText("puntos: " + iPuntos);
 
@@ -377,8 +427,15 @@ public class FrmPrincipal extends JFrame {
 		Timer timer = new Timer();
 		for (int iContador = 0; iContador < celda.length; iContador++) {
 			if (iContador != iPosicionDraculaInicial) {
-				celda[iContador].setVisible(true);
+				if(aImagenesPos.get(iContador).equals("images/pumpkin.png") || aImagenesPos.get(iContador).equals("images/bat.png")) {
+					celda[iContador].setVisible(true);
+				}
+				
+				if(aImagenesPos.get(iContador).equals("images/religion.png") || aImagenesPos.get(iContador).equals("images/garlic.png")) {
+					celda[iContador].setVisible(true);
+				}
 			}
+			
 
 		}
 		timer.scheduleAtFixedRate(new TimerTask() {
@@ -392,10 +449,15 @@ public class FrmPrincipal extends JFrame {
 
 					for (int iContador = 0; iContador < celda.length; iContador++) {
 						if (iContador != iPosicionDraculaInicial) {
-
-							celda[iContador].setVisible(false);
+							if(aImagenesPos.get(iContador).equals("images/pumpkin.png") || aImagenesPos.get(iContador).equals("images/bat.png")) {
+								celda[iContador].setVisible(false);
+							}
+							if(aImagenesPos.get(iContador).equals("images/religion.png") || aImagenesPos.get(iContador).equals("images/garlic.png")) {
+								celda[iContador].setVisible(false);
+							}
+							
 						} else {
-							celda[iContador].setVisible(true);
+							//celda[iContador].setVisible(true);
 						}
 					}
 				}
@@ -403,4 +465,23 @@ public class FrmPrincipal extends JFrame {
 		}, 0, 2000);
 
 	}
+	
+	public static void finJuego(String sMensaje) {	
+		
+		int resp =  JOptionPane.showConfirmDialog(null, sMensaje,
+	                "¿DESEAS VOLVER A JUGAR?", JOptionPane.YES_NO_OPTION,
+	                JOptionPane.QUESTION_MESSAGE);
+		 switch (resp) {
+	        case 0:
+	            break;
+	        case 1:
+	            System.exit(0);
+	            break;
+	        }
+	        
+	}
 }
+
+
+
+
