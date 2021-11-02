@@ -23,6 +23,8 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import model.CcAa;
+import model.Ciudad;
+import model.Provincia;
 
 public class ctrlGestionFchXml {
 
@@ -84,6 +86,72 @@ public class ctrlGestionFchXml {
 			System.err.println("Error aplicando la expresión");
 		}
 
+	}
+	
+	public ArrayList<CcAa> getInfo(){
+		return getCCAA();
+	}
+	
+	private ArrayList<CcAa>getCCAA(){
+		ArrayList<CcAa> listado = new ArrayList<CcAa>();
+		
+		NodeList nodos = docXML.getElementsByTagName("ccaa");
+		
+		for(int i = 0; i < nodos.getLength(); i++) {
+		Element nodo = (Element) nodos.item(i);
+		
+		String id = nodo.getAttribute("id");
+		String sNombre = nodo.getAttribute("nombre");
+		ArrayList<Provincia> aProvincias = getProvincias(id);
+		
+		listado.add(new CcAa (id, sNombre, aProvincias));
+		}
+		return listado;
+	}
+
+	private ArrayList<Provincia> getProvincias(String id) {
+		ArrayList<Provincia> listado = new ArrayList<Provincia>();
+		NodeList nodos = docXML.getElementsByTagName("provincias");
+		
+		for(int i = 0; i < nodos.getLength(); i++) {
+			Element nodo = (Element) nodos.item(i);
+			
+			String ccaa = nodo.getAttribute("ccaa");
+			String sId = nodo.getAttribute("id");
+			String sNombre = nodo.getAttribute("nombre");
+			ArrayList<Ciudad> aCiudades = getCiudades(id);
+			
+			if(ccaa.equals(id)) {
+				listado.add(new Provincia (ccaa, aCiudades, Integer.parseInt(sId),sNombre));
+			}
+			
+			}
+		
+		return listado;
+	}
+
+	private ArrayList<Ciudad> getCiudades(String id) {
+		ArrayList<Ciudad> listado = new ArrayList<Ciudad>();
+		
+		NodeList nodos = docXML.getElementsByTagName("ciudad");
+		
+		for(int i = 0; i < nodos.getLength(); i++) {
+			Element nodo = (Element) nodos.item(i);
+			
+			String ccaa = nodo.getAttribute("ccaa");
+			String sCodIne = nodo.getAttribute("cod_ine");
+			String sNombre = nodo.getAttribute("nombre");
+			int tMin = Integer.parseInt(nodo.getElementsByTagName("tmin").item(0).getTextContent());
+			int tMax = Integer.parseInt(nodo.getElementsByTagName("tmax").item(0).getTextContent());
+			ArrayList<Ciudad> aCiudades = getCiudades(id);
+			
+			if(sCodIne.substring(0,2).equals(id.substring(0,2))) {
+				listado.add(new Ciudad (ccaa, Integer.parseInt(sCodIne),sNombre, tMin,tMax));
+			}
+			
+			}
+		
+		return listado;
 	}
 
 	/*public ArrayList<Jugador> getJugadores(){

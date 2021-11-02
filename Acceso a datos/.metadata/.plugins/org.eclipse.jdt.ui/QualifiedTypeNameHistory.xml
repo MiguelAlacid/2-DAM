@@ -17,4 +17,6 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="ctrl.ctrlGestionFchXml"/>
     <fullyQualifiedTypeName name="model.CcAa"/>
+    <fullyQualifiedTypeName name="model.Provincia"/>
+    <fullyQualifiedTypeName name="model.Ciudad"/>
 </qualifiedTypeNameHistroy>
