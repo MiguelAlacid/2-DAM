@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="javax.swing.JList"/>
     <fullyQualifiedTypeName name="javax.swing.filechooser.FileNameExtensionFilter"/>
     <fullyQualifiedTypeName name="model.Persona"/>
-    <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
     <fullyQualifiedTypeName name="view.frmPrincipal"/>
     <fullyQualifiedTypeName name="javax.swing.JMenu"/>
     <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
@@ -34,4 +33,6 @@
     <fullyQualifiedTypeName name="start.Start"/>
     <fullyQualifiedTypeName name="ctrl.ctrlPrincipal"/>
     <fullyQualifiedTypeName name="view.FrmPrincipal"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.events.MouseEvent"/>
+    <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
 </qualifiedTypeNameHistroy>
