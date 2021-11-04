@@ -19,4 +19,7 @@
     <fullyQualifiedTypeName name="model.CcAa"/>
     <fullyQualifiedTypeName name="model.Provincia"/>
     <fullyQualifiedTypeName name="model.Ciudad"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="dbms.DBOracle"/>
 </qualifiedTypeNameHistroy>
