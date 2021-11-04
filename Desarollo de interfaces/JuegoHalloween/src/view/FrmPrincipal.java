@@ -274,7 +274,9 @@ public class FrmPrincipal extends JFrame {
 			}
 		});
 
+	
 		setVisible(true);
+		repaint();
 
 	}
 

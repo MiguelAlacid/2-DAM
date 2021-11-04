@@ -3,17 +3,24 @@ package model;
 import java.util.ArrayList;
 
 public class Provincia {
+	private String sCcaa;
 	private String sNombre;
 	private ArrayList<Ciudad> ciudad;
 	private int iId;
 	
-	public Provincia(String sNombre, ArrayList<Ciudad> ciudad, int iId) {
-		super();
+	public Provincia(String sNombre, ArrayList<Ciudad> ciudad, int iId, String sCcaa) {
 		this.sNombre = sNombre;
 		this.ciudad = ciudad;
 		this.iId = iId;
+		this.sCcaa = sCcaa;
 	}
 
+	public String getsCcaa() {
+		return sCcaa;
+	}
+	public void setsCcaa(String sCcaa) {
+		this.sCcaa = sCcaa;
+	}
 	public String getsNombre() {
 		return sNombre;
 	}
