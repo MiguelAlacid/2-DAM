@@ -34,5 +34,6 @@
     <fullyQualifiedTypeName name="ctrl.ctrlPrincipal"/>
     <fullyQualifiedTypeName name="view.FrmPrincipal"/>
     <fullyQualifiedTypeName name="org.w3c.dom.events.MouseEvent"/>
+    <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
 </qualifiedTypeNameHistroy>

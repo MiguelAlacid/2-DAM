@@ -68,7 +68,7 @@ public class FrmPrincipal extends JFrame {
 		lblImagen0.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(0,0)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen0.setIcon(imgThisImg);
 			}
 		});
@@ -82,7 +82,7 @@ public class FrmPrincipal extends JFrame {
 		lblImagen6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(2,0)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen6.setIcon(imgThisImg);
 			}
 		});
@@ -94,7 +94,7 @@ public class FrmPrincipal extends JFrame {
 		lblImagen3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(1,0)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen3.setIcon(imgThisImg);
 				
 			}
@@ -107,7 +107,7 @@ public class FrmPrincipal extends JFrame {
 		lblImagen1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(0,1)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen1.setIcon(imgThisImg);
 				
 			}
@@ -120,7 +120,7 @@ public class FrmPrincipal extends JFrame {
 		lblImagen2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(0,2)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen2.setIcon(imgThisImg);
 			}
 		});
@@ -132,7 +132,7 @@ public class FrmPrincipal extends JFrame {
 		lblImagen4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(1,1)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen4.setIcon(imgThisImg);
 			}
 		});
@@ -144,7 +144,7 @@ public class FrmPrincipal extends JFrame {
 		lblImagen5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(1,2)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen5.setIcon(imgThisImg);
 			}
 		});
@@ -156,7 +156,8 @@ public class FrmPrincipal extends JFrame {
 		lblImagen7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(2,1)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen7.setIcon(imgThisImg);
 			}
 		});
@@ -168,8 +169,10 @@ public class FrmPrincipal extends JFrame {
 		lblImagen8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas()).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+				
+				ImageIcon imgThisImg = new ImageIcon(new ImageIcon(ctrl.CtrlPrincipal.colocarFichas(2,2)).getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 				lblImagen8.setIcon(imgThisImg);
+				System.out.println(imgThisImg.toString());
 			}
 		});
 		lblImagen8.setBounds(311, 257, 158, 128);
