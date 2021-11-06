@@ -4,13 +4,9 @@ import java.sql.SQLException;
 
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
-	if(dbms.DBOracle.testConexion() == true) {
-		System.out.println("Conexion correcta");
-	}else {
-		System.out.println("Conexion rechazada");
-	}
+	dbms.DBOracle.openConn();
 
 	}
 

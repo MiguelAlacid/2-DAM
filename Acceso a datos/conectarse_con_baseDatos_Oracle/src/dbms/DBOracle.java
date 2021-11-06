@@ -1,12 +1,20 @@
 package dbms;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import model.Login;
+
 public class DBOracle {
 	
 	private static Connection conn;
+	private static File fchConn = new File("DBConn.cfg");
 	
 	public static Connection getConn() {
 		return conn;
@@ -16,23 +24,23 @@ public class DBOracle {
 		conn.close();
 	}
 
-	/*public static void conectar() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
-		String sDbHOST = "10.192.120.60";
-		String sDbPORT = "1521";
-		String sDbNAME = "ORCL";
-		String sDbUSER = "ALACID";
-		String sDbPASS = "medac21";
-		
-		String sDbURL = "jdbc:oracle:thin:@"+sDbHOST+":"+sDbPORT+":"+sDbNAME;
-		
-		// CARGAR EL DRIVER EN MEMORIA
-		Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
-		
-		// ESTABLECEMOS LA CONEXION
-		
-		conn = DriverManager.getConnection(sDbURL,sDbUSER,sDbPASS);
-		
-	}*/
+	public static void openConn() throws Exception {
+
+		Login dbLogin = readConfig();
+
+
+        System.out.println(dbLogin.toString());
+
+        String dbURL = "jdbc:oracle:thin:@" + dbLogin.getsDbHOST()+ ":" + dbLogin.getsDbPORT()+ ":" + dbLogin.getsDbNAME();
+
+        // Carga el DRIVER en memoria
+
+        Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
+
+        // Establecemos la conexión
+
+        conn = DriverManager.getConnection(dbURL, dbLogin.getsDbUSER(), dbLogin.getsDbPASS());
+    }
 	
 	//public static boolean testConexion() {
 		boolean boExito = false;
@@ -49,8 +57,27 @@ public class DBOracle {
 		//return boExito;
 //	}
 	
-	public static void readConfig(String sFicheroConfig) {
-		
-		
-	}
+		private static Login readConfig() {
+	        String sSeparador = ":";
+	        Login dbLogin = new Login();
+
+	        try {
+	            BufferedReader buff = new BufferedReader(new FileReader(fchConn));
+
+	            dbLogin.setsDbHOST(buff.readLine().split(sSeparador)[1]);
+	            dbLogin.setsDbPORT(buff.readLine().split(sSeparador)[1]);
+	            dbLogin.setsDbNAME(buff.readLine().split(sSeparador)[1]);
+	            dbLogin.setsDbUSER(buff.readLine().split(sSeparador)[1]);
+	            dbLogin.setsDbPASS(buff.readLine().split(sSeparador)[1]);
+
+	            buff.close();
+
+	        } catch (FileNotFoundException e) {
+	            e.printStackTrace();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        return dbLogin;
+	    }
 }
