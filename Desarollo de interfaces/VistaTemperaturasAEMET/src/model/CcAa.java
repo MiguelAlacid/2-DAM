@@ -15,7 +15,6 @@ public class CcAa {
 	
 	
 	public CcAa(String sNombre, String sId, ArrayList<Provincia> prov) {
-		super();
 		this.sNombre = sNombre;
 		this.sId = sId;
 		this.prov = prov;

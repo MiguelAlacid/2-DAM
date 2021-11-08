@@ -2,7 +2,7 @@ package model;
 
 public class Ciudad {
 	private String sCapital;
-	private int iCodIne;
+	private String sCodIne;
 	private String sNombre;
 	private int tMax;
 	private int tMin;
@@ -11,9 +11,9 @@ public class Ciudad {
 		
 	}
 	
-	public Ciudad(String sCapital, int iCodIne, String sNombre, int tMax, int tMin) {
+	public Ciudad(String sCapital, String sCodIne, String sNombre, int tMax, int tMin) {
 		this.sCapital = sCapital;
-		this.iCodIne = iCodIne;
+		this.sCodIne = sCodIne;
 		this.sNombre = sNombre;
 		this.tMax = tMax;
 		this.tMin = tMin;
@@ -25,11 +25,11 @@ public class Ciudad {
 	public void setsCapital(String sCapital) {
 		this.sCapital = sCapital;
 	}
-	public int getiCodIne() {
-		return iCodIne;
+	public String getsCodIne() {
+		return sCodIne;
 	}
-	public void setiCodIne(int iCodIne) {
-		this.iCodIne = iCodIne;
+	public void setsCodIne(String sCodIne) {
+		this.sCodIne = sCodIne;
 	}
 	public String getsNombre() {
 		return sNombre;
@@ -52,7 +52,7 @@ public class Ciudad {
 
 	@Override
 	public String toString() {
-		return "Ciudad [sCapital=" + sCapital + ", iCodIne=" + iCodIne + ", sNombre=" + sNombre + ", tMax=" + tMax
+		return "Ciudad [sCapital=" + sCapital + ", sCodIne=" + sCodIne + ", sNombre=" + sNombre + ", tMax=" + tMax
 				+ ", tMin=" + tMin + "]";
 	}
 

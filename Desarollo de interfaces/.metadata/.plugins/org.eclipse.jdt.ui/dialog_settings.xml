@@ -32,4 +32,7 @@
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item key="updateTextualMatches" value="false"/>
 	</section>
+	<section name="WorkingSetModelAwareSelectionDialog">
+		<item key="ShowVisibleOnly" value="true"/>
+	</section>
 </section>
