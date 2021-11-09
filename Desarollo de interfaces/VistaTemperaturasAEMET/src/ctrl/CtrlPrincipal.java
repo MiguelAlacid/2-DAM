@@ -43,6 +43,7 @@ public class CtrlPrincipal {
 		for(Provincia p : CCAA.getProv()) {
 			view.FrmPrincipal.lstProvincia.addItem(p.getsNombre());
 		}
+		
 	}
 	
 	public static void rellenarCiudades(Provincia oProvincia) {

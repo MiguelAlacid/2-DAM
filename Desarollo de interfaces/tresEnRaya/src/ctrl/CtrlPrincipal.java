@@ -1,5 +1,10 @@
 package ctrl;
 
+import java.awt.Image;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class CtrlPrincipal {
@@ -9,11 +14,13 @@ public class CtrlPrincipal {
 	public static final String sCirculo = "imagenes/circle.png";
 	public static boolean boExito;
 	public static String sFicha;
+	public static int iContador;
 	
 	public static boolean elegirJugador() {
 	
-		int iRandom = (int) Math.random() *  (0 + 1) + 1;
-		
+		Random aleatorio = new Random();
+		int iRandom = aleatorio.nextInt(2);
+		System.out.println(iRandom);
 		if(iRandom == 0) {
 			boExito = true;
 		}else {
@@ -23,108 +30,63 @@ public class CtrlPrincipal {
 		return boExito;
 	}
 	
-	public static String colocarFichas(int bContadorFila, int bContadorColumna) {
+	public static String colocarFichas(int iContadorFila, int iContadorColumna) {
 		
-		if(boExito == true && matriz[bContadorFila][bContadorColumna] == 0) {
-			sFicha = sX;
-			matriz[bContadorFila][bContadorColumna] = 1;
-			boExito = false;
-		}else if(boExito == false && matriz[bContadorFila][bContadorColumna] == 0){
-			sFicha = sCirculo;
-			matriz[bContadorFila][bContadorColumna] = 2;
-			boExito = true;
+		if(iContador != 6) {
+			if(boExito == true && matriz[iContadorFila][iContadorColumna] == 0) {
+				sFicha = sX;
+				matriz[iContadorFila][iContadorColumna] = 1;
+				boExito = false;
+			}else if(boExito == false && matriz[iContadorFila][iContadorColumna] == 0){
+				sFicha = sCirculo;
+				matriz[iContadorFila][iContadorColumna] = 2;
+				boExito = true;
+			}else {
+				if(matriz[iContadorFila][iContadorColumna] == 2) {
+					sFicha = sCirculo;
+				}else {
+					sFicha = sX;
+				}
+				
+			}
 		}
+		
+		iContador++;
 		
 		return sFicha;
 	}
 	
-	/*public static String meterEnMatriz(JLabel lblImagen) {
-		String sFicha = "";
-		switch(lblImagen.getText()) {
-		case "lblImagen0":
-			if(boExito == true) {
-				matriz[0][0] = 1;
-				sFicha = sX;
-			}else {
-				matriz[0][0] = 2;
-				sFicha = sCirculo;
-			}
-			break;
-		case "lblImagen1":
-			if(boExito == true) {
-				matriz[0][1] = 1;
-				sFicha = sX;
-			}else {
-				matriz[0][1] = 2;
-				sFicha = sCirculo;
-			}
-			break;
-		case "lblImagen2":
-			if(boExito == true) {
-				matriz[0][2] = 1;
-				sFicha = sX;
-			}else {
-				matriz[0][2] = 2;
-				sFicha = sCirculo;
-			}
-			break;
-		case "lblImagen3":
-			if(boExito == true) {
-				matriz[1][0] = 1;
-				sFicha = sX;
-			}else {
-				matriz[1][0] = 2;
-				sFicha = sCirculo;
-			}
-			break;
-		case "lblImagen4":
-			if(boExito == true) {
-				matriz[1][1] = 1;
-				sFicha = sX;
-			}else {
-				matriz[1][1] = 2;
-				sFicha = sCirculo;
-			}
-			break;
-		case "lblImagen5":
-			if(boExito == true) {
-				matriz[1][2] = 1;
-				sFicha = sX;
-			}else {
-				matriz[1][2] = 2;
-				sFicha = sCirculo;
-			}
-			break;
-		case "lblImagen6":
-			if(boExito == true) {
-				matriz[2][0] = 1;
-				sFicha = sX;
-			}else {
-				matriz[2][0] = 2;
-				sFicha = sCirculo;
-			}
-			break;
-		case "lblImagen7":
-			if(boExito == true) {
-				matriz[2][1] = 1;
-				sFicha = sX;
-			}else {
-				matriz[2][1] = 2;
-				sFicha = sCirculo;
-			}
-			break;
-		case "lblImagen8":
-			if(boExito == true) {
-				matriz[2][2] = 1;
-				sFicha = sX;
-			}else {
-				matriz[2][2] = 2;
-				sFicha = sCirculo;
-			}
-			break;
+	public static int contadorFichas() {
+		return iContador;
+	}
+	
+	public static int moverFicha(int iContadorFila, int iContadorColumna) {
+		int iNumero = 1;
+		if(matriz[iContadorFila][iContadorColumna] == 1) {
+			iNumero = 1;
 		}
-		return sFicha;
+		return iNumero;
+	}
+	
+	public static void setearFicha(int iContadorFila, int iContadorColumna, int iNumero, JLabel jlOrigen, JLabel jlDestino) {
+
+		if(matriz[iContadorFila][iContadorColumna] == 0) {
+			matriz[iContadorFila][iContadorColumna] = iNumero;
+		}
 		
-	}*/
+		if(iNumero == 1) {
+			ImageIcon imgThisImgDestino = new ImageIcon(new ImageIcon("imagenes/favorite.png")
+					.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+			jlDestino.setIcon(imgThisImgDestino);
+			
+			ImageIcon imgThisImgOrigen = new ImageIcon(new ImageIcon("")
+					.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+			jlOrigen.setIcon(imgThisImgOrigen);
+
+		}
+	}
 	
 }
+
+
+

@@ -54,8 +54,10 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.CcAa"/>
     <fullyQualifiedTypeName name="view.FrmPrincipal"/>
-    <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
     <fullyQualifiedTypeName name="model.Provincia"/>
     <fullyQualifiedTypeName name="model.Ciudad"/>
     <fullyQualifiedTypeName name="ctrl.ctrlGestionFchXml"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.ThreadLocalRandom"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
 </qualifiedTypeNameHistroy>

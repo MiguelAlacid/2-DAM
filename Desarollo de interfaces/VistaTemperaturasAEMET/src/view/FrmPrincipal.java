@@ -98,7 +98,11 @@ public class FrmPrincipal extends JFrame {
 		
 		lstProvincia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					sNombreProvincia = lstProvincia.getSelectedItem().toString();		
+				
+					sNombreProvincia = lstProvincia.getSelectedItem().toString();
+				
+					System.out.println(sNombreProvincia);
+					
 				
 				for(int iContador = 0; iContador < aProvincia.size(); iContador++) {
 					
