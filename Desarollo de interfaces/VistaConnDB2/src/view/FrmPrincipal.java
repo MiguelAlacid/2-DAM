@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -15,14 +16,20 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.CardLayout;
+import java.awt.GridLayout;
 
 public class FrmPrincipal extends JFrame {
 
 	private JPanel contentPane;
-	private JTextArea txtSql;
+	public static  JTextArea txtSql;
+	public static JTextArea textArea;
 
 
 	public FrmPrincipal() {
+		
+		setResizable(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 405, 293);
 		
@@ -70,23 +77,30 @@ public class FrmPrincipal extends JFrame {
 		txtSql.setBounds(0, 0, 281, 78);
 		contentPane.add(txtSql);
 		
-		JTextArea txtResultadoSql = new JTextArea();
-		txtResultadoSql.setBounds(0, 78, 389, 154);
-		contentPane.add(txtResultadoSql);
-		
 		JButton btnEjecutar = new JButton("EJECUTAR");
 		btnEjecutar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					logic.LogDept.getListado();
+					textArea.setText(logic.LogDept.getListado());
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
 		});
-		btnEjecutar.setBounds(280, 1, 109, 77);
+		btnEjecutar.setBounds(280, 0, 109, 78);
 		contentPane.add(btnEjecutar);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 78, 389, 154);
+		contentPane.add(panel);
+		panel.setLayout(new GridLayout(1, 1));
+		
+		textArea = new JTextArea();
+		
+		JScrollPane scrollPane = new JScrollPane(textArea);
+		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		panel.add(scrollPane);
 		setVisible(true);
 	}
 }
