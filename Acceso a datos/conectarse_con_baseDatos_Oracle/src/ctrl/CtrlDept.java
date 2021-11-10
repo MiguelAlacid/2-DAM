@@ -34,4 +34,35 @@ public class CtrlDept {
 			e.printStackTrace();
 		}
 	}
+
+	public static int totalEmp(Integer numDept) {
+		int iTotal = 0;
+		try {
+			iTotal = logic.LogDept.getTotalEmpleados(numDept);
+			System.out.println("El departamento " + numDept + " tiene " + iTotal + " empleados");
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("no se ha poddo obtener el total de empleados del departamento " + numDept);
+		}
+		return iTotal;
+		
+	}
+
+	public static void getEmpsPorDept() {
+		
+		
+	}
+
+	public static void getListadoDepts() {
+		try {
+			ArrayList<Dept> listado = logic.LogDept.getDepts();
+			
+			for(Dept d: listado) {
+				System.out.println(d);
+			}
+		}catch(Exception e) {
+			
+		}
+		
+	}
 }

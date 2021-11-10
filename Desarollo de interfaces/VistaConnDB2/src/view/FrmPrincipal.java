@@ -13,15 +13,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
+import javax.swing.JButton;
 
 public class FrmPrincipal extends JFrame {
 
 	private JPanel contentPane;
+	private JTextArea txtSql;
 
 
 	public FrmPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 246, 261);
+		setBounds(100, 100, 405, 293);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -60,9 +63,30 @@ public class FrmPrincipal extends JFrame {
 		mnNewMenu.add(mntmTest);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		txtSql = new JTextArea();
+		txtSql.setBounds(0, 0, 281, 78);
+		contentPane.add(txtSql);
+		
+		JTextArea txtResultadoSql = new JTextArea();
+		txtResultadoSql.setBounds(0, 78, 389, 154);
+		contentPane.add(txtResultadoSql);
+		
+		JButton btnEjecutar = new JButton("EJECUTAR");
+		btnEjecutar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					logic.LogDept.getListado();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnEjecutar.setBounds(280, 1, 109, 77);
+		contentPane.add(btnEjecutar);
 		setVisible(true);
 	}
-
 }

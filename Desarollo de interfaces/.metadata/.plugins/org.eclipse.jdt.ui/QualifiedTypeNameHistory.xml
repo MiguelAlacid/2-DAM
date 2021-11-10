@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="model.Languages"/>
-    <fullyQualifiedTypeName name="view.frmConfig"/>
-    <fullyQualifiedTypeName name="javax.swing.event.ListSelectionEvent"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
     <fullyQualifiedTypeName name="javax.swing.JList"/>
     <fullyQualifiedTypeName name="javax.swing.filechooser.FileNameExtensionFilter"/>
@@ -51,13 +47,17 @@
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="java.io.OutputStream"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.CcAa"/>
-    <fullyQualifiedTypeName name="view.FrmPrincipal"/>
     <fullyQualifiedTypeName name="model.Provincia"/>
     <fullyQualifiedTypeName name="model.Ciudad"/>
     <fullyQualifiedTypeName name="ctrl.ctrlGestionFchXml"/>
     <fullyQualifiedTypeName name="java.util.concurrent.ThreadLocalRandom"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
+    <fullyQualifiedTypeName name="view.FrmPrincipal"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSetMetaData"/>
+    <fullyQualifiedTypeName name="logic.LogDept"/>
 </qualifiedTypeNameHistroy>

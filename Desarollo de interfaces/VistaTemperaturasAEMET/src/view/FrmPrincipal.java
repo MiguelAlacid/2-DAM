@@ -20,6 +20,8 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class FrmPrincipal extends JFrame {
 
@@ -71,49 +73,32 @@ public class FrmPrincipal extends JFrame {
 		chckbxGuardar.setBounds(49, 360, 183, 23);
 		contentPane.add(chckbxGuardar);
 		lstProvincia = new JComboBox();
+		/*lstProvincia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ctrl.CtrlPrincipal.listenerProv2();
+			}
+		});*/
 		lstProvincia.setBounds(145, 131, 138, 24);
 		contentPane.add(lstProvincia);
 		lstComunidad = new JComboBox();
-		aComunidades = ctrl.ctrlGestionFchXml.getInfo();
-		lstComunidad.addActionListener(new ActionListener() {
+		/*lstComunidad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				sNombreComunidad = lstComunidad.getSelectedItem().toString();
+				ctrl.CtrlPrincipal.listenerComunidad2();
+			}
+		});*/
+		lstComunidad.addActionListener(e->
+				ctrl.CtrlPrincipal.listenerComunidad()
 				
 			
-				for(int iContador = 0; iContador < aComunidades.size(); iContador++) {
-					if(aComunidades.get(iContador).getsNombre().equals(sNombreComunidad)) {
-						CCAA = aComunidades.get(iContador);
-						System.out.println(CCAA);
-					}
-				}
-				aProvincia = ctrl.ctrlGestionFchXml.getProvincias(CCAA.getsId());
-				ctrl.CtrlPrincipal.rellenarProv(CCAA);
-				lstProvincia.setSelectedIndex(0);
-			}
-		});
+		);
+		
 		lstComunidad.setBounds(145, 52, 138, 24);
 		contentPane.add(lstComunidad);
 		
 		
-		lstProvincia.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-					sNombreProvincia = lstProvincia.getSelectedItem().toString();
-				
-					System.out.println(sNombreProvincia);
-					
-				
-				for(int iContador = 0; iContador < aProvincia.size(); iContador++) {
-					
-					if(aProvincia.get(iContador).getsNombre().equals(sNombreProvincia)) {
-						oProvincia = aProvincia.get(iContador);
-						System.out.println(oProvincia);
-					}
-				}
-				ctrl.CtrlPrincipal.rellenarCiudades(oProvincia);
-			}
-		});
+		lstProvincia.addActionListener(e->
+					ctrl.CtrlPrincipal.listenerProv2()
+		);
 	
 		
 		lstCiudad = new JComboBox();

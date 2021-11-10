@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="model.Empleado"/>
     <fullyQualifiedTypeName name="view.viewEmpleado"/>
     <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
@@ -33,6 +32,10 @@
     <fullyQualifiedTypeName name="model.Dept"/>
     <fullyQualifiedTypeName name="java.sql.CallableStatement"/>
     <fullyQualifiedTypeName name="dbms.DBOracle"/>
-    <fullyQualifiedTypeName name="logic.LogDept"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.sql.Types"/>
     <fullyQualifiedTypeName name="ctrl.CtrlDept"/>
+    <fullyQualifiedTypeName name="logic.LogDept"/>
+    <fullyQualifiedTypeName name="oracle.jdbc.OracleTypes"/>
+    <fullyQualifiedTypeName name="oracle.jdbc.internal.OracleTypes"/>
 </qualifiedTypeNameHistroy>
