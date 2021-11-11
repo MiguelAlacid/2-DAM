@@ -23,15 +23,14 @@ import java.awt.GridLayout;
 public class FrmPrincipal extends JFrame {
 
 	private JPanel contentPane;
-	public static  JTextArea txtSql;
 	public static JTextArea textArea;
-
+	public static JTextArea txtSql;
 
 	public FrmPrincipal() {
 		
-		setResizable(true);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 405, 293);
+		setBounds(100, 100, 503, 358);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -71,11 +70,16 @@ public class FrmPrincipal extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel_1 = new JPanel();
+		contentPane.add(panel_1, BorderLayout.NORTH);
+		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		txtSql = new JTextArea();
-		txtSql.setBounds(0, 0, 281, 78);
-		contentPane.add(txtSql);
+		txtSql.setRows(3);
+		panel_1.add(txtSql);
+		
 		
 		JButton btnEjecutar = new JButton("EJECUTAR");
 		btnEjecutar.addActionListener(new ActionListener() {
@@ -88,11 +92,9 @@ public class FrmPrincipal extends JFrame {
 				}
 			}
 		});
-		btnEjecutar.setBounds(280, 0, 109, 78);
-		contentPane.add(btnEjecutar);
+		panel_1.add(btnEjecutar, BorderLayout.EAST);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 78, 389, 154);
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(1, 1));
 		
