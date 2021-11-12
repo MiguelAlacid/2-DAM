@@ -7,8 +7,7 @@ import model.Login;
 public class CtrlPrincipal {
 	public static Login loginCredenciales = new Login();
 	public static int iContador;
-	public static String sSql = "SELECT * FROM DEPT";
-	public static String sDeptno;
+	public static String sSql = "SELECT DEPTNO,DNAME AS NOMBRE,LOC AS LOCALIDAD FROM DEPT";
 	public static void inicio() throws Exception {
 		new view.FrmPrincipal();
 		rellenarTabla(logic.LogDept.getListado(sSql));
@@ -58,15 +57,26 @@ public class CtrlPrincipal {
 	
 	public static void rellenarTabla(DefaultTableModel modelo) {
 		view.FrmPrincipal.tablaDepartamentos.setModel(modelo);
+		view.FrmPrincipal.tablaDepartamentos.getColumnModel().getColumn(0).setMaxWidth(0);
+		view.FrmPrincipal.tablaDepartamentos.getColumnModel().getColumn(0).setMinWidth(0);
+		view.FrmPrincipal.tablaDepartamentos.getTableHeader().getColumnModel().getColumn(0).setMaxWidth(0);
+		view.FrmPrincipal.tablaDepartamentos.getTableHeader().getColumnModel().getColumn(0).setMinWidth(0);
+		//view.FrmPrincipal.tablaDepartamentos.getColumnModel().getColumn(0).setResizable(false);
 	}
 	
-	public static void fileSeleccionada() {
-        int iNumCol = view.FrmPrincipal.tablaDepartamentos.getSelectedColumn();
+	public static void listenerTablaDept() throws Exception {
+		
+		view.FrmPrincipal.tablaEmpleados.setModel(logic.LogDept.getListadoTablas(numeroDeptno()));
+		
+		
+	}
+	
+	public static String numeroDeptno() {
         int iNumFila = view.FrmPrincipal.tablaDepartamentos.getSelectedRow();
 
-        String sValor = view.FrmPrincipal.tablaDepartamentos.getValueAt(iNumCol, iNumFila).toString();
+        String sValor = view.FrmPrincipal.tablaDepartamentos.getValueAt(iNumFila, 0).toString();
 
-        System.out.println(sValor);
+        return sValor;
     }
 
 	/*public static void listenerJlist() throws Exception {

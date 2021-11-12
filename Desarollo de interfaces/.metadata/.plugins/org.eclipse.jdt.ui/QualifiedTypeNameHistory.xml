@@ -58,6 +58,6 @@
     <fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
     <fullyQualifiedTypeName name="javax.swing.DefaultListModel"/>
     <fullyQualifiedTypeName name="view.FrmPrincipal"/>
-    <fullyQualifiedTypeName name="logic.LogDept"/>
     <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
+    <fullyQualifiedTypeName name="logic.LogDept"/>
 </qualifiedTypeNameHistroy>

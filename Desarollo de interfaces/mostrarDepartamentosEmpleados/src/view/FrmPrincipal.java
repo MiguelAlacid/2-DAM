@@ -90,6 +90,18 @@ public class FrmPrincipal extends JFrame {
 		panelDepartamentos.setLayout(null);
 		
 		tablaDepartamentos = new JTable();
+	
+		tablaDepartamentos.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				try {
+					ctrl.CtrlPrincipal.listenerTablaDept();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		tablaDepartamentos.setBounds(10, 23, 268, 340);
 		
 		JPanel panelEmpleados = new JPanel();

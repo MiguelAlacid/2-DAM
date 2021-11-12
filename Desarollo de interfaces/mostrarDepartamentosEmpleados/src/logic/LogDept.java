@@ -27,29 +27,28 @@ public class LogDept {
 		
 		String[] aFila = new String[numCampos];
 		
-		for(int iContador = 2; iContador <= numCampos; iContador++) {
+		for(int iContador = 1; iContador <= numCampos; iContador++) {
 			modelo.addColumn(info.getColumnLabel(iContador));
 		}
 		
 		while (resultado.next()) {
-			iContador2++;
+			
 			for (int iContador = 1; iContador <= numCampos; iContador++) {
-					aFila[iContador - 1] = resultado.getString(iContador);
+					aFila[0] = resultado.getString("DEPTNO");
+					aFila[1] = resultado.getString("NOMBRE");
+					aFila[2] = resultado.getString("LOCALIDAD");
 				
 			}
-			
-			if(iContador2 != 1) {
 				modelo.addRow(aFila);
-			}
 		}
 		dbms.DBOracle.desconectar();
 
 		return modelo;
 	}
 	
-	public static DefaultListModel getListadoTablas() throws Exception {
+	public static DefaultTableModel getListadoTablas(String sDeptno) throws Exception {
 
-        String sSQL = "select table_name from user_tables order by 1";
+        String sSQL = "SELECT ENAME AS NOMBRE, JOB AS OFICIO, SAL AS SALARIO FROM EMP WHERE DEPTNO = " + sDeptno;
 
         dbms.DBOracle.openConn();
 
@@ -60,15 +59,21 @@ public class LogDept {
         ResultSetMetaData info = resultado.getMetaData();
         int nCampos = info.getColumnCount();
 
-        DefaultListModel<String> modelo = new DefaultListModel<String>();
+        DefaultTableModel modelo = new DefaultTableModel();
 
-        String sFila = "";
+    	
+		String[] aFila = new String[nCampos];
+		
+		for(int iContador = 1; iContador <= nCampos; iContador++) {
+			modelo.addColumn(info.getColumnLabel(iContador));
+		}
 
         while (resultado.next()) { 
+        	
             for (int i = 1; i <= nCampos; i++) {
-                sFila= resultado.getString(i);
+                aFila[i-1]= resultado.getString(i);
             }
-            modelo.addElement(sFila);
+            modelo.addRow(aFila);
         }
 
         dbms.DBOracle.desconectar();
