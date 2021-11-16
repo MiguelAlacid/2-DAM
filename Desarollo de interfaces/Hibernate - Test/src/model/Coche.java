@@ -7,13 +7,18 @@ public class Coche {
 	private String sModelo;
 	private Integer iPotencia;
 	
-	
-	
 	public Coche() {
 		
 	}
 	
 	public Coche(String sMarca, String sModelo, Integer iPotencia) {
+		this.sMarca = sMarca;
+		this.sModelo = sModelo;
+		this.iPotencia = iPotencia;
+	}
+	
+	public Coche(int idCoche, String sMarca, String sModelo, Integer iPotencia) {
+		this.idCoche = idCoche;
 		this.sMarca = sMarca;
 		this.sModelo = sModelo;
 		this.iPotencia = iPotencia;
