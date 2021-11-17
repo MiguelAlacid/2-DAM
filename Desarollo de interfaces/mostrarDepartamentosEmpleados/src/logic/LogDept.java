@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.table.DefaultTableModel;
 
+import model.emp;
+
 public class LogDept {
 
 	public static int iContador2 = 0;
@@ -79,6 +81,43 @@ public class LogDept {
         dbms.DBOracle.desconectar();
 
         return modelo;
+    }
+	
+	public static emp getListadoEmp() throws Exception {
+
+        String sSQL = "SELECT E2.ENAME AS JEFE,E1.EMPNO, E1.ENAME,E1.JOB,E1.SAL,E1.COMM, E1.HIREDATE FROM EMP E1, EMP E2 WHERE E1.ENAME = '" + ctrl.CtrlPrincipal.nombreEmp() + "' AND E2.ENAME = (SELECT ENAME FROM EMP WHERE EMPNO = E1.MGR)";
+        emp oEmpleado = new emp();
+        dbms.DBOracle.openConn();
+
+        Statement miOrden = dbms.DBOracle.getConn().createStatement();
+        miOrden.execute(sSQL);
+
+        ResultSet resultado = miOrden.getResultSet();
+        ResultSetMetaData info = resultado.getMetaData();
+        int nCampos = info.getColumnCount();
+
+        DefaultTableModel modelo = new DefaultTableModel();
+
+    	
+		//String[] aFila = new String[nCampos];
+
+        while (resultado.next()) { 
+        	
+            for (int i = 1; i <= nCampos; i++) {
+                oEmpleado.setsNombre(resultado.getString("ENAME"));
+                oEmpleado.setsOficio(resultado.getString("JOB"));
+                oEmpleado.setiComm(resultado.getInt("COMM"));
+                oEmpleado.setiSalario(resultado.getInt("SAL"));
+                oEmpleado.setsFechaAlta(resultado.getString("HIREDATE"));
+                oEmpleado.setsNombreJefe(resultado.getString("JEFE"));
+                
+            }
+        }
+        System.out.println(oEmpleado.getsNombre());
+
+        dbms.DBOracle.desconectar();
+
+        return oEmpleado;
     }
 
 	/*

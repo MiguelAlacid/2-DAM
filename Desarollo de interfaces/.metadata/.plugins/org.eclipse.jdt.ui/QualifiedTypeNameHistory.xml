@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="model.Persona"/>
-    <fullyQualifiedTypeName name="view.frmPrincipal"/>
     <fullyQualifiedTypeName name="javax.swing.JMenu"/>
     <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
     <fullyQualifiedTypeName name="view.manualDialog"/>
@@ -57,7 +55,9 @@
     <fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
     <fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
     <fullyQualifiedTypeName name="javax.swing.DefaultListModel"/>
+    <fullyQualifiedTypeName name="model.emp"/>
     <fullyQualifiedTypeName name="view.FrmPrincipal"/>
-    <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
+    <fullyQualifiedTypeName name="view.JDialogEmpleado"/>
     <fullyQualifiedTypeName name="logic.LogDept"/>
+    <fullyQualifiedTypeName name="ctrl.CtrlPrincipal"/>
 </qualifiedTypeNameHistroy>

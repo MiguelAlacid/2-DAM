@@ -110,6 +110,18 @@ public class FrmPrincipal extends JFrame {
 		panelEmpleados.setLayout(null);
 		
 		tablaEmpleados = new JTable();
+		tablaEmpleados.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				try {
+					ctrl.CtrlPrincipal.listenerTablaEmp();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
 		tablaEmpleados.setBounds(10, 23, 575, 340);
 		
 		JScrollPane scrollPaneDepartamentos = new JScrollPane(tablaDepartamentos);
@@ -120,6 +132,7 @@ public class FrmPrincipal extends JFrame {
 		panelDepartamentos.add(scrollPaneDepartamentos, "name_77180949036500");
 		
 		JScrollPane scrollPaneEmpleados = new JScrollPane(tablaEmpleados);
+
 		scrollPaneEmpleados.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPaneEmpleados.setBounds(10,23,565,340);
 		

@@ -14,6 +14,16 @@ import javax.swing.JTextField;
 public class JDialogEmpleado extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	public static JLabel lblSalario;
+	public static JLabel lblOficio;
+	public static JLabel lblNombre;
+	public static JLabel lblComision;
+	public static JLabel lblFechaAlta;
+	public static JLabel lblSetNombre;
+	public static JLabel lblSetOficio;
+	public static JLabel lblSetSalario;
+	public static JLabel lblSetComision;
+	public static JLabel lblSetHiredate;
 	
 	public JDialogEmpleado() {
 		setBounds(100, 100, 286, 300);
@@ -22,34 +32,55 @@ public class JDialogEmpleado extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		{
-			JLabel lblNombre = new JLabel("Nombre:");
+			lblNombre = new JLabel("Nombre:");
 			lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 			lblNombre.setBounds(40, 40, 54, 17);
 			contentPanel.add(lblNombre);
 		}
 		{
-			JLabel lblNewLabel = new JLabel("Oficio:");
-			lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-			lblNewLabel.setBounds(40, 75, 54, 17);
-			contentPanel.add(lblNewLabel);
+			lblOficio = new JLabel("Oficio:");
+			lblOficio.setFont(new Font("Tahoma", Font.PLAIN, 14));
+			lblOficio.setBounds(40, 75, 54, 17);
+			contentPanel.add(lblOficio);
 		}
 		{
-			JLabel lblSalario = new JLabel("Salario");
+			lblSalario = new JLabel("Salario");
 			lblSalario.setFont(new Font("Tahoma", Font.PLAIN, 14));
 			lblSalario.setBounds(40, 110, 54, 17);
 			contentPanel.add(lblSalario);
 		}
 		{
-			JLabel lblComision = new JLabel("Comision:");
+			lblComision = new JLabel("Comision:");
 			lblComision.setFont(new Font("Tahoma", Font.PLAIN, 14));
 			lblComision.setBounds(40, 145, 60, 17);
 			contentPanel.add(lblComision);
 		}
 		{
-			JLabel lblFechaAlta = new JLabel("Fecha alta:");
+			lblFechaAlta = new JLabel("Fecha alta:");
 			lblFechaAlta.setFont(new Font("Tahoma", Font.PLAIN, 14));
 			lblFechaAlta.setBounds(40, 180, 81, 14);
 			contentPanel.add(lblFechaAlta);
 		}
+		
+		lblSetNombre = new JLabel("");
+		lblSetNombre.setBounds(114, 43, 137, 14);
+		contentPanel.add(lblSetNombre);
+		
+		lblSetOficio = new JLabel("");
+		lblSetOficio.setBounds(114, 78, 127, 14);
+		contentPanel.add(lblSetOficio);
+		
+		lblSetSalario = new JLabel("");
+		lblSetSalario.setBounds(114, 113, 128, 14);
+		contentPanel.add(lblSetSalario);
+		
+		lblSetComision = new JLabel("");
+		lblSetComision.setBounds(114, 148, 131, 14);
+		contentPanel.add(lblSetComision);
+		
+		lblSetHiredate = new JLabel("");
+		lblSetHiredate.setBounds(114, 182, 127, 14);
+		contentPanel.add(lblSetHiredate);
+		setVisible(true);
 	}
 }

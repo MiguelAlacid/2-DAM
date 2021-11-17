@@ -78,6 +78,24 @@ public class CtrlPrincipal {
 
         return sValor;
     }
+	
+	public static String nombreEmp() {
+		int iNumeroFila = view.FrmPrincipal.tablaEmpleados.getSelectedRow();
+		
+		String sValor = view.FrmPrincipal.tablaEmpleados.getValueAt(iNumeroFila, 0).toString();
+		
+		return sValor;
+	}
+	public static void listenerTablaEmp() throws Exception {
+		new view.JDialogEmpleado();
+		System.out.println(logic.LogDept.getListadoEmp().getsNombre());
+		view.JDialogEmpleado.lblSetNombre.setText(logic.LogDept.getListadoEmp().getsNombre());
+		view.JDialogEmpleado.lblSetOficio.setText(logic.LogDept.getListadoEmp().getsOficio());
+		view.JDialogEmpleado.lblSetComision.setText(""+logic.LogDept.getListadoEmp().getiComm());
+		view.JDialogEmpleado.lblSetSalario.setText(""+logic.LogDept.getListadoEmp().getiSalario());
+		view.JDialogEmpleado.lblSetHiredate.setText(logic.LogDept.getListadoEmp().getsFechaAlta());
+		
+	}
 
 	/*public static void listenerJlist() throws Exception {
 		
