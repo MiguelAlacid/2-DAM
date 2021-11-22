@@ -29,6 +29,8 @@ import model.Provincia;
 public class ctrlGestionFchXml {
 
 	private static Document docXML;
+	
+	
 	public void saveData() {
 		
 		try {
