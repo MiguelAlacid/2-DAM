@@ -7,10 +7,10 @@ import model.Login;
 public class CtrlPrincipal {
 	public static Login loginCredenciales = new Login();
 	public static int iContador;
-	public static String sSql = "SELECT DEPTNO,DNAME AS NOMBRE,LOC AS LOCALIDAD FROM DEPT";
+	public static String sSql = "SELECT ID_CHALECO, MODELO, COLOR,TALLA,PRECIO,STOCK FROM CHALECO";
 	public static void inicio() throws Exception {
 		new view.FrmPrincipal();
-		rellenarTabla(logic.LogDept.getListado(sSql));
+		rellenarTabla(logic.LogChaleco.getListado(sSql));
 	}
 	
 	public static void loginCredenciales() {
@@ -41,6 +41,9 @@ public class CtrlPrincipal {
 		view.JDTest.txtName.setText(loginCredenciales.getsDbNAME());
 	}
 	
+	
+
+	
 	/*public static void listenerEjecutar() {
 		try {
 			rellenarTabla(logic.LogDept.getListado(view.FrmPrincipal..getText()));
@@ -56,22 +59,22 @@ public class CtrlPrincipal {
     }*/
 	
 	public static void rellenarTabla(DefaultTableModel modelo) {
-		view.FrmPrincipal.tablaDepartamentos.setModel(modelo);
-		view.FrmPrincipal.tablaDepartamentos.getColumnModel().getColumn(0).setMaxWidth(0);
-		view.FrmPrincipal.tablaDepartamentos.getColumnModel().getColumn(0).setMinWidth(0);
-		view.FrmPrincipal.tablaDepartamentos.getTableHeader().getColumnModel().getColumn(0).setMaxWidth(0);
-		view.FrmPrincipal.tablaDepartamentos.getTableHeader().getColumnModel().getColumn(0).setMinWidth(0);
+		view.FrmPrincipal.tableChaleco.setModel(modelo);
+		view.FrmPrincipal.tableChaleco.getColumnModel().getColumn(0).setMaxWidth(0);
+		view.FrmPrincipal.tableChaleco.getColumnModel().getColumn(0).setMinWidth(0);
+		view.FrmPrincipal.tableChaleco.getTableHeader().getColumnModel().getColumn(0).setMaxWidth(0);
+		view.FrmPrincipal.tableChaleco.getTableHeader().getColumnModel().getColumn(0).setMinWidth(0);
 		//view.FrmPrincipal.tablaDepartamentos.getColumnModel().getColumn(0).setResizable(false);
 	}
 	
-	public static void listenerTablaDept() throws Exception {
+	/*public static void listenerTablaDept() throws Exception {
 		
-		view.FrmPrincipal.tablaEmpleados.setModel(logic.LogDept.getListadoTablas(numeroDeptno()));
+		view.FrmPrincipal.tableChaleco.setModel(logic.LogChaleco.getListadoTablas(numeroDeptno()));
 		
 		
 	}
 	
-	public static String numeroDeptno() {
+	/*public static String numeroDeptno() {
         int iNumFila = view.FrmPrincipal.tablaDepartamentos.getSelectedRow();
 
         String sValor = view.FrmPrincipal.tablaDepartamentos.getValueAt(iNumFila, 0).toString();

@@ -36,34 +36,26 @@ import javax.swing.ScrollPaneConstants;
 public class FrmPrincipal extends JFrame {
 
 	private JPanel contentPane;
-	public static JTable tablaDepartamentos;
-	public static JTable tablaEmpleados;
+	public static JTable tableChaleco;
 
 	public FrmPrincipal() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 435);
+		setBounds(100, 100, 557, 435);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnNewMenu = new JMenu("Conex");
-		menuBar.add(mnNewMenu);
+		JMenu mnMenuGestion = new JMenu("Gesti\u00F3n");
+		menuBar.add(mnMenuGestion);
 		
-		JMenuItem mntmLogin = new JMenuItem("Login");
-		mntmLogin.addActionListener(new ActionListener()  {
-			public void actionPerformed(ActionEvent e) {
-				new JDLogin();
-			}
-		});
+		JMenu mnNewMenu = new JMenu("Conexi\u00F3n");
+		mnMenuGestion.add(mnNewMenu);
 		
-		mnNewMenu.add(mntmLogin);
+		JMenuItem mntmDatabase = new JMenuItem("Database");
+		mnNewMenu.add(mntmDatabase);
 		
-		JSeparator separator = new JSeparator();
-		mnNewMenu.add(separator);
-		
-		JMenuItem mntmTest = new JMenuItem("Test");
-		mntmTest.addActionListener(new ActionListener() {
+		mntmDatabase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new JDTest();
 				
@@ -75,69 +67,72 @@ public class FrmPrincipal extends JFrame {
 					JOptionPane.showConfirmDialog(null, "ERROR EN LAS CREEDENCIALES, NO SE PUDO CONECTAR A LA BASE DE DATOS", "ERROR",
 							JOptionPane.YES_OPTION, JOptionPane.WARNING_MESSAGE);
 				}
+				
 				ctrl.CtrlPrincipal.mostrarCredenciales();
 			}
 		});
-		mnNewMenu.add(mntmTest);
+		JMenuItem mntmLogin = new JMenuItem("Login");
+		mnNewMenu.add(mntmLogin);
+		mntmLogin.addActionListener(new ActionListener()  {
+			public void actionPerformed(ActionEvent e) {
+				new JDLogin();
+			}
+		});
+		
+		JMenuItem mntmActualizar = new JMenuItem("Actualizar");
+		mntmActualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					ctrl.CtrlPrincipal.rellenarTabla(logic.LogChaleco.getListado(ctrl.CtrlPrincipal.sSql));
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		mnMenuGestion.add(mntmActualizar);
+		
+		JSeparator separator = new JSeparator();
+		mnMenuGestion.add(separator);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Salir");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		mnMenuGestion.add(mntmNewMenuItem);
+		
+		JMenu mnMenuChaleco = new JMenu("Chaleco");
+		menuBar.add(mnMenuChaleco);
+		
+		JMenuItem mntmNuevo = new JMenuItem("Nuevo");
+		mntmNuevo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new JDChalecos();
+			}
+		});
+		mnMenuChaleco.add(mntmNuevo);
+		
+		JMenuItem mntmEditar = new JMenuItem("Editar");
+		mnMenuChaleco.add(mntmEditar);
+		
+		JMenuItem mntmBorrar = new JMenuItem("Borrar");
+		mnMenuChaleco.add(mntmBorrar);
+		
+		JMenuItem mntmConsultar = new JMenuItem("Consultar");
+		mnMenuChaleco.add(mntmConsultar);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new CardLayout(0, 0));
 		
-		JPanel panelDepartamentos = new JPanel();
-		panelDepartamentos.setBounds(0, 0, 288, 374);
-		contentPane.add(panelDepartamentos);
-		panelDepartamentos.setLayout(null);
+		tableChaleco = new JTable();
+		tableChaleco.setBounds(10, 23, 575, 340);
+		JScrollPane scrollPaneChalecos= new JScrollPane(tableChaleco);
+		scrollPaneChalecos.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		contentPane.add(scrollPaneChalecos, "name_424673091681400");
 		
-		tablaDepartamentos = new JTable();
-	
-		tablaDepartamentos.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				try {
-					ctrl.CtrlPrincipal.listenerTablaDept();
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}
-		});
-		tablaDepartamentos.setBounds(10, 23, 268, 340);
-		
-		JPanel panelEmpleados = new JPanel();
-		panelEmpleados.setBounds(289, 0, 585, 374);
-		contentPane.add(panelEmpleados);
-		panelEmpleados.setLayout(null);
-		
-		tablaEmpleados = new JTable();
-		tablaEmpleados.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				try {
-					ctrl.CtrlPrincipal.listenerTablaEmp();
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
-			}
-		});
-		tablaEmpleados.setBounds(10, 23, 575, 340);
-		
-		JScrollPane scrollPaneDepartamentos = new JScrollPane(tablaDepartamentos);
-		scrollPaneDepartamentos.setSize(268, 339);
-		scrollPaneDepartamentos.setLocation(10, 24);
-		
-		scrollPaneDepartamentos.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		panelDepartamentos.add(scrollPaneDepartamentos, "name_77180949036500");
-		
-		JScrollPane scrollPaneEmpleados = new JScrollPane(tablaEmpleados);
-
-		scrollPaneEmpleados.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPaneEmpleados.setBounds(10,23,565,340);
-		
-		scrollPaneDepartamentos.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		panelEmpleados.add(scrollPaneEmpleados, "name_77180949036501");
 		
 		setVisible(true);
 	}
