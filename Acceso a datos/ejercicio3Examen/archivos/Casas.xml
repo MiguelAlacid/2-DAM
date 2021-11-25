@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Casas>
+    <CASA>
+        <ID_CASA>1</ID_CASA>
+        <POBLACION>Sevilla</POBLACION>
+        <SUPERFICIE>13.4</SUPERFICIE>
+        <ASEOS>2</ASEOS>
+    </CASA>
+    <CASA>
+        <ID_CASA>2</ID_CASA>
+        <POBLACION>Cadiz</POBLACION>
+        <SUPERFICIE>20.4</SUPERFICIE>
+        <ASEOS>3</ASEOS>
+    </CASA>
+    <CASA>
+        <ID_CASA>3</ID_CASA>
+        <POBLACION>Malaga</POBLACION>
+        <SUPERFICIE>10.4</SUPERFICIE>
+        <ASEOS>1</ASEOS>
+    </CASA>
+</Casas>

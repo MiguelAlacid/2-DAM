@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<COCHES>
+    <COCHE>
+        <ID_COCHE>21</ID_COCHE>
+        <MARCA>SEAT</MARCA>
+        <MODELO>IBIZA</MODELO>
+        <POTENCIA>1900</POTENCIA>
+    </COCHE>
+    <COCHE>
+        <ID_COCHE>22</ID_COCHE>
+        <MARCA>SEAT</MARCA>
+        <MODELO>IBIZA</MODELO>
+        <POTENCIA>1900</POTENCIA>
+    </COCHE>
+    <COCHE>
+        <ID_COCHE>3</ID_COCHE>
+        <MARCA>Audi</MARCA>
+        <MODELO>A6</MODELO>
+        <POTENCIA>1900</POTENCIA>
+    </COCHE>
+    <COCHE>
+        <ID_COCHE>1</ID_COCHE>
+        <MARCA>FORD</MARCA>
+        <MODELO>FIESTA</MODELO>
+        <POTENCIA>1400</POTENCIA>
+    </COCHE>
+    <COCHE>
+        <ID_COCHE>23</ID_COCHE>
+        <MARCA>SEAT</MARCA>
+        <MODELO>IBIZA</MODELO>
+        <POTENCIA>200</POTENCIA>
+    </COCHE>
+    <COCHE>
+        <ID_COCHE>2</ID_COCHE>
+        <MARCA>Audi</MARCA>
+        <MODELO>A6</MODELO>
+        <POTENCIA>1900</POTENCIA>
+    </COCHE>
+</COCHES>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CASAS>
+    <CASA>
+        <ID_CASA>1</ID_CASA>
+        <CALLE>Calle Hockey</CALLE>
+        <NUMERO>26</NUMERO>
+        <SUPERFICIE>230</SUPERFICIE>
+    </CASA>
+    <CASA>
+        <ID_CASA>2</ID_CASA>
+        <CALLE>Calle eBaloncesto</CALLE>
+        <NUMERO>5</NUMERO>
+        <SUPERFICIE>230</SUPERFICIE>
+    </CASA>
+    <CASA>
+        <ID_CASA>3</ID_CASA>
+        <CALLE>Calle Tenis</CALLE>
+        <NUMERO>7</NUMERO>
+        <SUPERFICIE>230</SUPERFICIE>
+    </CASA>
+    <CASA>
+        <ID_CASA>4</ID_CASA>
+        <CALLE>Calle Hipica</CALLE>
+        <NUMERO>20</NUMERO>
+        <SUPERFICIE>230</SUPERFICIE>
+    </CASA>
+    <CASA>
+        <ID_CASA>5</ID_CASA>
+        <CALLE>Calle Hockey</CALLE>
+        <NUMERO>26</NUMERO>
+        <SUPERFICIE>230</SUPERFICIE>
+    </CASA>
+    <CASA>
+        <ID_CASA>6</ID_CASA>
+        <CALLE>Calle eBaloncesto</CALLE>
+        <NUMERO>5</NUMERO>
+        <SUPERFICIE>230</SUPERFICIE>
+    </CASA>
+    <CASA>
+        <ID_CASA>7</ID_CASA>
+        <CALLE>Calle Tenis</CALLE>
+        <NUMERO>7</NUMERO>
+        <SUPERFICIE>230</SUPERFICIE>
+    </CASA>
+    <CASA>
+        <ID_CASA>8</ID_CASA>
+        <CALLE>Calle Hipica</CALLE>
+        <NUMERO>20</NUMERO>
+        <SUPERFICIE>230</SUPERFICIE>
+    </CASA>
+</CASAS>

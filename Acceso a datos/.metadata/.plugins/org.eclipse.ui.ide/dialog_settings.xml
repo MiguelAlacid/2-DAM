@@ -14,6 +14,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Usuario\git-repositories\2-DAM\Acceso a datos\Hibernate - appCasa"/>
+			<item value="C:\Users\Usuario\git-repositories\2-DAM\Acceso a datos\Hibernate - appCasa2JPA"/>
+			<item value="C:\Users\Usuario\git-repositories\2-DAM\Acceso a datos\ejercicio exportar BD en XML"/>
 			<item value="C:\Users\alaci\git-repositories\2-DAM\Acceso a datos\FicherosXML"/>
 			<item value="C:\Users\alaci\git-repositories\2-DAM\Acceso a datos\Hibernate - Test2JPA"/>
 			<item value="C:\Users\alaci\git-repositories\2-DAM\Acceso a datos\Hibernate - appCasa2JPA"/>

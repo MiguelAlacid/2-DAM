@@ -3,7 +3,7 @@
     <DEPT>
         <DEPTNO>10</DEPTNO>
         <DNAME>ACCOUNTING</DNAME>
-        <LOC>NEW YORK</LOC>
+        <LOC>MAD</LOC>
     </DEPT>
     <DEPT>
         <DEPTNO>20</DEPTNO>
