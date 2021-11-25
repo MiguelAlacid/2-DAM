@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Login {
 
 	private String sDbHOST;
@@ -61,12 +63,8 @@ public class Login {
 	public void setsDbPORT(String sDbPORT) {
 		this.sDbPORT = sDbPORT;
 	}
-
-
-	@Override
-	public String toString() {
-		return "Login [sDbHOST=" + sDbHOST + ", sDbNAME=" + sDbNAME + ", sDbUSER=" + sDbUSER + ", sDbPASS=" + sDbPASS
-				+ ", sDbPORT=" + sDbPORT + "]";
-	}
+	
+	
+	
 	
 }

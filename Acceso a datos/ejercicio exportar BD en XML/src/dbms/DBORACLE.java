@@ -8,10 +8,12 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 import model.Login;
+import model.Login;
 
-public class DBORACLE {
+public class DBoracle {
 
 	private static Connection conn;
 	private static File fchConn = new File("DBConn.cfg");
@@ -23,6 +25,24 @@ public class DBORACLE {
 	public static void desconectar() throws SQLException {
 		conn.close();
 	}
+	
+	public static boolean testConn() {
+        boolean boExito;
+
+        try {
+            openConn();
+            desconectar();
+            boExito = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            boExito = false;
+        }
+
+
+        System.out.println(boExito);
+
+        return boExito;
+    }
 
 	public static void openConn() throws Exception {
 

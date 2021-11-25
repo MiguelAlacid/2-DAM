@@ -23,6 +23,7 @@
 		<!-- Mapping file -->
 		<mapping class = "model.Coche"></mapping>
 		<!-- Tantos archivos mapping como objetos haya -->
+		
 		<!--  <mapping resource="mapping/coche.hbm.xml"/> -->
 	</session-factory>
 </hibernate-configuration>
